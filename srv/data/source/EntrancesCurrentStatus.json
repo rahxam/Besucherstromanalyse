@@ -1,0 +1,24 @@
+{
+    "values": [
+        {
+            "entrance_ID": "AE",
+            "event_ID": "1",
+            "status": "hoch"
+        },
+        {
+            "entrance_ID": "ST",
+            "event_ID": "1",
+            "status": "hoch"
+        },
+        {
+            "entrance_ID": "LR",
+            "event_ID": "1",
+            "status": "normal"
+        },
+        {
+            "entrance_ID": "FK",
+            "event_ID": "1",
+            "status": "normal"
+        }
+    ]
+}

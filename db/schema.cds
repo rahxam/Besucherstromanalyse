@@ -13,6 +13,19 @@ entity Blocks {
     entrance : Association to one Entrances;
 }
 
+entity EntrancesCurrentStatus {
+    key entrance : Association to one Entrances;
+    key event : Association to one Events;
+    status : String;
+}
+
+entity EntrancesHistoryStatus {
+    key entrance : Association to one Entrances;
+    key event : Association to one Events;
+    key date : DateTime;
+    value : Double;
+}
+
 entity Entrances {
     key ID : String;
     name : String;

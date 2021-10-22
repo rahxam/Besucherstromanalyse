@@ -13,7 +13,7 @@ module.exports = class {
 
         this.insertUuidv4Ids()
         this.transferText()
-        this.uniquifyById()
+        // this.uniquifyById()
       }, error => console.log(error))
   }
 
