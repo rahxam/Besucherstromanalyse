@@ -2,8 +2,21 @@
 	controllerName="odc.hackaton.besucherstrom-ui.controller.App"
 	displayBlock="true"
 	xmlns="sap.m"
-	xmlns:mvc="sap.ui.core.mvc">
+	xmlns:mvc="sap.ui.core.mvc"
+  xmlns:f="sap.f">
 
-	<App id="app"/>
+	<f:ShellBar
+            id="sapFShellBarSample"               
+            showNavButton="false"
+            showProductSwitcher="false"
+            homeIconPressed="onNavHome"
+            navButtonPressed="onNavHome"
+            avatarPressed="onNavHome"
+            homeIcon="{img>/logo}"
+            class="PageContent">  
+        </f:ShellBar>
+        <Shell id="shell" appWidthLimited="false">              
+            <NavContainer id="app"/>
+        </Shell>
 
 </mvc:View>
