@@ -1,0 +1,20 @@
+{
+  "definitions": {
+    "API_AUTHORS": {
+      "kind": "service"
+    },
+    "API_AUTHORS.Authors": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "ID": {
+          "key": true,
+          "type": "cds.UUID"
+        },
+        "name": {
+          "type": "cds.String"
+        }
+      }
+    }
+  }
+}

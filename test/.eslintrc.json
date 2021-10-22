@@ -1,0 +1,18 @@
+{
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es2021": true,
+        "node": true,
+        "es6": false,
+        "jest": true,
+        "mocha": true
+    },
+    "globals": {
+        "chai": true,
+        "server": true,
+        "expect": true,
+        "util": true,
+        "DateTime": true
+    }
+}

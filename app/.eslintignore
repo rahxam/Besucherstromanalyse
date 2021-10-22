@@ -1,0 +1,14 @@
+# ignorefiles,folders and types
+Gruntfile.js
+/webapp/**/*.json
+/webapp/**/*.properties
+/webapp/**/*.xml
+/webapp/**/*.html
+/webapp/**/*.css
+/webapp/dist
+/webapp/test/
+/webapp/localService/
+*.jpg
+*.gif
+/gen
+approuter.js

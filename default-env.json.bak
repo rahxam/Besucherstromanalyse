@@ -1,0 +1,14 @@
+{
+  "DEBUG": "n",
+  "destinations": [
+      {
+        "name": "besucherstrom-srv-binding",
+        "url": "http://localhost:4004",
+        "forwardAuthToken": true
+      },
+      {
+        "name": "API_AUTHORS",
+        "url": "http://localhost:4005/api-authors"
+      }
+    ]
+}

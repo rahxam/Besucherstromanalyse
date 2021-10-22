@@ -1,0 +1,199 @@
+{
+  "name": "besucherstrom",
+  "version": "1.0.0",
+  "description": "A monorepo with best practices for CAP.",
+  "repository": "https://github.com/sap-samples/cloud-cap-samples.git",
+  "author": "maximilian.hartig@quadrio.de",
+  "dependencies": {
+    "@sap/cds": "^5.5.5",
+    "@sap/hana-client": "^2.10.15",
+    "@sap/xsenv": "^3.1.1",
+    "@sap/xssec": "^3.2.8",
+    "cookie-parser": "^1.4.5",
+    "express": "^4.17.1",
+    "passport": "0.5.0",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@sap/cds-dk": "^4.5.4",
+    "c8": "^7.10.0",
+    "cds-swagger-ui-express": "^0.3.0",
+    "chai": "^4.3.4",
+    "chai-as-promised": "^7.1.1",
+    "chai-http": "^4.3.0",
+    "chai-subset": "^1.6.0",
+    "commitizen": "^4.2.4",
+    "csv-writer": "^1.6.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "git-last-commit": "^1.0.1",
+    "luxon": "^2.0.2",
+    "mbt": "^1.2.4",
+    "mocha": "^9.1.3",
+    "mocha-junit-reporter": "^2.0.2",
+    "prettier-config-standard": "^4.0.0",
+    "snazzy": "^9.0.0",
+    "sqlite3": "^5.0.2",
+    "standard": "^16.0.4",
+    "standard-version": "^9.3.2",
+    "standard-version-updater-yaml": "^1.0.3",
+    "start-server-and-test": "^1.14.0"
+  },
+  "scripts": {
+    "commit": "git-cz",
+    "release": "standard-version",
+    "lint": "standard --fix",
+    "lint:ci": "standard",
+    "lint:verbose": "standard --verbose | snazzy",
+    "audit:fix": "npm audit fix && cd app && npm audit fix && cd ../mockserver && npm audit fix && cd ../app/test && npm audit fix",
+    "test": "NODE_ENV=test c8 npx mocha --global cptable",
+    "test:win": "c8 npx mocha --global cptable",
+    "test:ci": "NODE_ENV=test c8 npx mocha --forbid-only --global cptable",
+    "test:with-mockserver": "start-server-and-test watch:mockserver http://localhost:4005 test:ci",
+    "test:change-app-name": "node .ci/change-app-name.js",
+    "test:all": "NODE_ENV=test && npm run data:test && npm run test:ci && cd app/test && npm run test:ci",
+    "data:test": "node srv/data/data-generator-cli.js",
+    "data:prod": "NODE_ENV=prod node srv/data/data-generator-cli.js",
+    "btp:create-role-collection": "node .ci/role-collection.js",
+    "install:all": "npm i && cd mockserver && npm i && cd ../app && npm i && cd test && npm i",
+    "update": "npx npm-check-updates -u && npm i && cd app && npx npm-check-updates -u && npm i && cd ../mockserver && npx npm-check-updates -u && npm i && cd ../app/test && npx npm-check-updates -u && npm i",
+    "watch": "cds watch --profile test",
+    "watch:mockserver": "cd mockserver && cds watch --port 4005",
+    "watch:hana": "cds watch",
+    "watch:sqlite": "cds deploy --to sqlite --no-save && cds watch --profile sqlite",
+    "start": "NODE_OPTIONS='--max-http-header-size=64000' npx cds run",
+    "start:test": "cds run --profile test",
+    "start:dev": "cds run --with-mocks",
+    "start:sqlite": "npm run data:test && cds run --profile test",
+    "ssh": "cf ssh besucherstrom-srv -N -T -L 20003:connectivityproxy.internal.cf.eu10.hana.ondemand.com:20003",
+    "cleanup": "rm -rf node_modules && rm -rf */node_modules && rm -rf */*/node_modules",
+    "build": "cds build/all --clean",
+    "build:apps": "cd app && npm run build",
+    "build:cf": "mbt build -p=cf",
+    "build:xs-security": "cds compile srv/ --to xsuaa  > xs-security.json",
+    "build-deploy:dev": "npm run mta:dev && npm run deploy-cf:dev",
+    "build-deploy:dev:win": "npm run mta:dev:win && npm run deploy-cf:dev",
+    "build-deploy:prod": "npm run mta:prod && npm run deploy-cf:dev",
+    "build-deploy": "npm run mta:dev && npm run deploy-cf",
+    "mta:prod": "npm run data:prod && rm -r -f db/data/* && npm run mta:dev",
+    "mta:dev": "rm -r -f mta_archives/* && cds build/all && mbt build -p=cf",
+    "mta:dev:win": "del /S mta_archives  && cds build/all && mbt build -p=cf",
+    "deploy": "cds deploy",
+    "deploy:hana": "npm run data:prod && rm -r -f db/data/* && cds deploy --to hana --no-save --auto-undeploy",
+    "deploy-cf": "cf deploy mta_archives/$(ls -t -U mta_archives/ | grep -m 1 '.*\\.mtar') -f -e mta.mtaext",
+    "deploy-cf:dev": "cf bg-deploy mta_archives/$(ls -t -U mta_archives/ | grep -m 1 '.*\\.mtar') -f --no-confirm -e mta_local.mtaext --version-rule ALL",
+    "deploy-cf:dev:win": "cf bg-deploy mta_archives/besucherstrom_0.1.0.mtar -f --no-confirm -e mta_local.mtaext --version-rule ALL",
+    "deploy-cf:bg": "cf bg-deploy mta_archives/$(ls -t -U mta_archives/ | grep -m 1 '.*\\.mtar') -f -e mta.mtaext",
+    "deploy-cf:bg-no-confirm": "cf bg-deploy mta_archives/$(ls -t -U mta_archives/ | grep -m 1 '.*\\.mtar') -f --no-confirm -e mta.mtaext",
+    "deploy:confirm-bg-deploy": "cf bg-deploy -i $(cat deployment.uuid) -a resume"
+  },
+  "prettier": "prettier-config-standard",
+  "jest": {
+    "testEnvironment": "node",
+    "testTimeout": 20000,
+    "testMatch": [
+      "**/*.test.js"
+    ]
+  },
+  "standard": {
+    "globals": [
+      "SELECT",
+      "INSERT",
+      "UPDATE",
+      "DELETE",
+      "CREATE",
+      "DROP",
+      "cds",
+      "browser",
+      "$",
+      "sap",
+      "it",
+      "expect",
+      "describe"
+    ]
+  },
+  "license": "Quadrio License",
+  "private": true,
+  "cds": {
+    "kibana_formatter": true,
+    "runtime": {
+      "protectMetadata": false
+    },
+    "hana": {
+      "deploy-format": "hdbtable",
+      "syntax": "hdi"
+    },
+    "requires": {
+      "auth": {
+        "strategy": "JWT",
+        "[test]": {
+          "strategy": "mock",
+          "users": {
+            "admin": {
+              "password": "1234",
+              "roles": [
+                "user",
+                "test"
+              ]
+            },
+            "*": true
+          }
+        }
+      },
+      "db": {
+        "kind": "hana",
+        "pool": {
+          "max": 10000,
+          "min": 0,
+          "acquireTimeoutMillis": 10000
+        },
+        "[test]": {
+          "kind": "sql"
+        },
+        "[sqlite]": {
+          "kind": "sqlite"
+        }
+      },
+      "uaa": {
+        "kind": "xsuaa",
+        "[test]": {
+          "kind": ""
+        }
+      },
+      "API_AUTHORS": {
+        "kind": "odata",
+        "model": "srv/external/API_AUTHORS",
+        "credentials": {
+          "destination": "API_AUTHORS",
+          "path": "",
+          "requestTimeout": 30000
+        },
+        "pool": {
+          "min": 1,
+          "max": 10
+        }
+      }
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "engines": {
+    "node": "14.x"
+  },
+  "c8": {
+    "all": false,
+    "check-coverage": false,
+    "exclude": [
+      ".mocharc.js",
+      "test/*",
+      "srv/data/*"
+    ],
+    "reporter": [
+      "text",
+      "lcov",
+      "cobertura"
+    ]
+  }
+}

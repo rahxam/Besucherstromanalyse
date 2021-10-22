@@ -1,0 +1,61 @@
+{
+  "name": "besucherstrom-ui",
+  "description": "besucherstrom-ui",
+  "license": "SEE LICENSE IN <filename>",
+  "private": true,
+  "devDependencies": {
+    "@ui5/cli": "~2.14.0",
+    "nyc": "~15.1.0",
+    "prettier-config-standard": "^4.0.0",
+    "ui5-middleware-simpleproxy": "~0.7.3",
+    "ui5-tooling-livereload": "~0.1.6"
+  },
+  "dependencies": {
+    "@sap/approuter": "~10.8.2"
+  },
+  "scripts": {
+    "watch": "npx ui5 serve -p 8080 -o index.html",
+    "lint": "npx standard --fix",
+    "_______________ci": "",
+    "start": "node node_modules/@sap/approuter/approuter.js",
+    "lint:ci": "npx standard ",
+    "report": "cd test && npm run-script report",
+    "_______________internal": "",
+    "build": "npx ui5 build --clean-dest --include-task=generateManifestBundle generateCachebusterInfo",
+    "build-instrument": "npx nyc instrument webapp --output dist --delete --complete-copy",
+    "clean": "git clean -fdx -e node_modules"
+  },
+  "odata": {
+    "version": "v4"
+  },
+  "prettier": "prettier-config-standard",
+  "standard": {
+    "globals": [
+      "browser",
+      "$",
+      "it",
+      "sap",
+      "expect"
+    ]
+  },
+  "ui5": {
+    "dependencies": [
+      "ui5-tooling-livereload",
+      "ui5-middleware-simpleproxy"
+    ]
+  },
+  "nyc": {
+    "all": true,
+    "check-coverage": false,
+    "exclude": [],
+    "extension": [
+      "*.js"
+    ],
+    "reporter": [
+      "json",
+      "text",
+      "lcov",
+      "cobertura"
+    ]
+  }
+}

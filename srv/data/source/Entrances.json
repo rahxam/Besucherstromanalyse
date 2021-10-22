@@ -1,0 +1,20 @@
+{
+    "values": [
+        {
+            "ID": "AE",
+            "name": "Lennéplatz"
+        },
+        {
+            "ID": "ST",
+            "name": "Parkstraße"
+        },
+        {
+            "ID": "LR",
+            "name": "Hygiene-Museum"
+        },
+        {
+            "ID": "FK",
+            "name": "Georg-Arnhold-Bad"
+        }
+    ]
+}

@@ -1,0 +1,33 @@
+<mvc:View
+	controllerName="odc.hackaton.besucherstrom-ui.controller.Object"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:layout="sap.ui.layout"
+	xmlns:semantic="sap.f.semantic">
+
+	<semantic:SemanticPage
+		id="page"
+		headerPinnable="false"
+		toggleHeaderOnTitleClick="false"
+		busy="{objectView>/busy}"
+		busyIndicatorDelay="{objectView>/delay}">
+
+		<semantic:titleHeading>
+			<Title text="{ID}" />
+		</semantic:titleHeading>
+		<semantic:headerContent>
+			<layout:HorizontalLayout allowWrapping="true">
+				<layout:VerticalLayout class="sapUiMediumMarginEnd">
+					<ObjectAttribute title="Block" text="{block_ID}"/>
+					<ObjectAttribute title="Event name" text="{eventName}"/>
+					<ObjectAttribute title="Event Date" text="{eventDate}"/>
+					<ObjectAttribute title="Entrance" text="{entranceName} ({entrance_ID})"/>
+					<ObjectAttribute title="Perfect Time" text="{perfectTime}"/>
+				</layout:VerticalLayout>
+			</layout:HorizontalLayout>
+		</semantic:headerContent>
+
+
+	</semantic:SemanticPage>
+
+</mvc:View>

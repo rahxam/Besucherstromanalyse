@@ -1,0 +1,50 @@
+{
+    "values": [
+        {
+            "ID": "K1",
+            "entrance_ID": "FK"
+        },{
+            "ID": "K2",
+            "entrance_ID": "FK"
+        },{
+            "ID": "K3",
+            "entrance_ID": "FK"
+        },{
+            "ID": "K4",
+            "entrance_ID": "FK"
+        },{
+            "ID": "K5",
+            "entrance_ID": "FK"
+        },{
+            "ID": "L1",
+            "entrance_ID": "LR"
+        },{
+            "ID": "L2",
+            "entrance_ID": "LR"
+        },{
+            "ID": "L3",
+            "entrance_ID": "LR"
+        },{
+            "ID": "L4",
+            "entrance_ID": "LR"
+        },{
+            "ID": "A1",
+            "entrance_ID": "AE"
+        },{
+            "ID": "A2",
+            "entrance_ID": "AE"
+        },{
+            "ID": "A3",
+            "entrance_ID": "AE"
+        },{
+            "ID": "T1",
+            "entrance_ID": "ST"
+        },{
+            "ID": "T2",
+            "entrance_ID": "ST"
+        },{
+            "ID": "T3",
+            "entrance_ID": "ST"
+        }
+    ]
+}

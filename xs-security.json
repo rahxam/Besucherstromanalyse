@@ -1,0 +1,35 @@
+{
+  "xsappname": "besucherstrom",
+  "tenant-mode": "dedicated",
+  "oauth2-configuration": {
+    "redirect-uris": [
+      "https://*.applicationstudio.cloud.sap/**",
+      "https://*.cfapps.eu10.hana.ondemand.com/**",
+      "http://localhost:5000/**"
+    ]
+  },
+  "scopes": [
+    {
+      "name": "$XSAPPNAME.user",
+      "description": "besucherstrom user"
+    },
+    {
+      "name": "$XSAPPNAME.test",
+      "description": "besucherstrom test"
+    },
+    {
+      "name": "uaa.user",
+      "description": "UAA User"
+    }
+  ],
+  "attributes": [],
+  "role-templates": [
+    {
+      "name": "user",
+      "description": "besucherstrom user",
+      "scope-references": ["uaa.user", "$XSAPPNAME.user"],
+      "attribute-references": []
+    }
+  ],
+  "role-collections": []
+}

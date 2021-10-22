@@ -1,0 +1,64 @@
+#
+# absolute-directories
+#
+
+#  For CI
+/.npm/
+
+# backend
+/node_modules/
+/mta_archives/
+/gen/
+/reports/
+/coverage/
+/db/data/
+/db/csv/
+/.timerecording_mta_build_tmp/
+
+# ui
+/app/node_modules/
+/app/dist/
+/app/coverage/
+
+# ui test
+/app/test/node_modules/
+/app/test/.nyc_output/
+/app/test/allure-results/
+
+/app/test/allure-report/
+/app/test/reports/
+
+#
+/mockserver/node_modules/
+/mockserver/_out
+/mockserver/connection.properties
+/mockserver/gen/
+/mockserver/target/
+
+
+#
+# absolute-files
+#
+junit.xml
+
+# added by cds deploy
+default-env.json
+default-env-prod.json
+default-env-prd.json
+default-env-dev.json
+default-*.json
+# relative-directories
+logs
+
+#
+# File extensions
+*.mta
+*.db
+.DS_Store
+*.orig
+
+*.iml
+*.flattened-pom.xml
+
+*.log
+npm-debug.log*

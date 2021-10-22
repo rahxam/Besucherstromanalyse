@@ -1,0 +1,103 @@
+_schema-version: "3.1"
+ID: besucherstrom
+version: 0.1.0
+description: besucherstrom Application
+parameters:
+  enable-parallel-deployments: true
+build-parameters:
+  before-all:
+    - builder: custom
+      commands:
+        - npx cds build\/all
+modules:
+  - name: besucherstrom-ui
+    type: html5
+    path: app
+    parameters:
+      memory: 128M
+      disk-quota: 1024M
+      routes:
+        - route: ${default-uri}
+        - route: ${MTA_ENV}.${default-domain}
+    build-parameters:
+      supported-platforms:
+        - CF
+      builder: custom
+      ignore:
+        - test/
+      commands:
+        - npm i
+        - npm run-script build
+        - npm prune --production
+    requires:
+      - name: besucherstrom-uaa
+      - name: besucherstrom-logs
+      - name: besucherstrom-srv-binding
+        group: destinations
+        properties:
+          forwardAuthToken: true
+          timeout: 120000
+          strictSSL: true
+          name: besucherstrom-srv-binding
+          url: ~{srv-url}
+    properties:
+      COOKIES: |
+        { "SameSite":"None" }
+      SEND_XFRAMEOPTIONS: false
+      SESSION_TIMEOUT: 120
+      SAP_JWT_TRUST_ACL:
+        - clientid: "*"
+          identityzone: "*"
+  - name: besucherstrom-srv
+    type: nodejs
+    path: gen/srv
+    properties:
+      EXIT: 1
+      SAP_JWT_TRUST_ACL:
+        - clientid: "*"
+          identityzone: "*"
+    parameters:
+      memory: 256M
+      disk-quota: 4096M
+      routes:
+        - route: ${default-uri}
+        - route: ${MTA_ENV}-srv.${default-domain}
+    requires:
+      - name: besucherstrom-db
+      - name: besucherstrom-logs
+      - name: besucherstrom-dest
+      - name: besucherstrom-uaa
+    provides:
+      - name: besucherstrom-srv-binding
+        properties:
+          srv-url: ${default-url}
+  - name: db
+    type: hdb
+    path: gen/db
+    parameters:
+      app-name: besucherstrom-db
+    requires:
+      - name: besucherstrom-db
+resources:
+  - name: besucherstrom-db
+    type: com.sap.xs.hdi-container
+    parameters:
+      service: hana
+      service-plan: hdi-shared
+    properties:
+      hdi-service-name: ${service-name}
+  - name: besucherstrom-uaa
+    parameters:
+      path: xs-security.json
+      service-plan: application
+    type: com.sap.xs.uaa
+  - name: besucherstrom-logs
+    parameters:
+      service-plan: lite
+      service: application-logs
+    type: org.cloudfoundry.managed-service
+  - name: besucherstrom-dest
+    parameters:
+      service-plan: lite
+      service: destination
+    type: org.cloudfoundry.managed-service

@@ -1,0 +1,27 @@
+{
+  "name": "mockserver",
+  "version": "1.0.0",
+  "description": "A simple CAP mockserver.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@sap/cds": "5.5.5",
+    "@sap/cds-dk": "4.5.4",
+    "express": "^4"
+  },
+  "devDependencies": {
+    "sqlite3": "^5.0.2"
+  },
+  "scripts": {
+    "start": "npx cds run"
+  },
+  "cds": {
+    "requires": {
+      "API_AUTHORS_AUTHORS": {
+        "kind": "odata",
+        "model": "srv/external/API_AUTHORS_AUTHORS"
+      }
+    }
+  }
+}

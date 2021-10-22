@@ -1,0 +1,26 @@
+{
+  "welcomeFile": "/webapp/index.html",
+  "authenticationMethod": "none",
+  "sessionTimeout": 60,
+  "logout": {
+    "logoutEndpoint": "/do/logout",
+    "logoutPage": "/webapp/logout.html"
+  },
+  "routes": [
+    {
+      "source": "^/webapp(.*)$",
+      "target": "$1",
+      "localDir": "dist/"
+    },
+    {
+      "source": "^/dev(.*)$",
+      "target": "$1",
+      "localDir": "webapp/"
+    },
+    {
+      "source": "^/(.*)",
+      "csrfProtection": false,
+      "destination": "besucherstrom-srv-binding"
+    }
+  ]
+}
