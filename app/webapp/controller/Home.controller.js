@@ -1,4 +1,4 @@
-/* globals history, location */
+/* globals history, location, JsBarcode */
 sap.ui.define(
   [
     './BaseController',
@@ -42,6 +42,113 @@ sap.ui.define(
             tableNoDataText: this.getResourceBundle().getText('tableNoDataText')
           })
           this.setModel(oViewModel, 'worklistView')
+          const queryString = window.location.search
+          const urlParams = new URLSearchParams(queryString)
+          const code = urlParams.get('code')
+
+          if (code) {
+            const oTicketModel = new sap.ui.model.json.JSONModel()
+            oTicketModel.loadData("/besucherstrom-ui/Tickets('" + code + "')", "" , false)
+            const data = oTicketModel.getData();
+            
+            
+            var tmpPerfectTime = new Date(data.perfectTime);
+            var day, month, year, hours, minutes;
+            day = tmpPerfectTime.getDate();
+            if ( day < 10 ) {
+              day = '0' + day;
+            }
+            month = tmpPerfectTime.getMonth();
+            if( month < 10 ) {
+              month = '0' + month;
+            }
+            hours = tmpPerfectTime.getHours();
+            if( hours < 10 ) {
+              hours = '0' + hours;
+            }
+            minutes = tmpPerfectTime.getMinutes();
+            if( minutes < 10 ) {
+              minutes = '0' + minutes;
+            }
+            
+
+            data.perfectTime = day + '.' + month + '.' + tmpPerfectTime.getFullYear() + ' ' + hours + ':' + minutes;
+
+            var eventDateTmp = new Date(data.eventDate);
+            day = eventDateTmp.getDate();
+            if ( day < 10 ) {
+              day = '0' + day;
+            }
+            month = eventDateTmp.getMonth();
+            if( month < 10 ) {
+              month = '0' + month;
+            }
+            hours = eventDateTmp.getHours();
+            if( hours < 10 ) {
+              hours = '0' + hours;
+            }
+            minutes = eventDateTmp.getMinutes();
+            if( minutes < 10 ) {
+              minutes = '0' + minutes;
+            }
+            
+            data.eventDate = day + '.' + month + '.' + eventDateTmp.getFullYear() + ' ' + hours + ':' + minutes;
+
+
+
+
+            
+
+            const oHistoryModel = new sap.ui.model.json.JSONModel()
+            oHistoryModel.loadData("/besucherstrom-ui/EntrancesHistoryStatus?$filter=entrance_ID%20eq%20%27" + data.entrance_ID + "%27%20and%20event_ID%20eq%20%27" + data.event_ID + "%27", "" , false)
+            
+              
+              const historyData = oHistoryModel.getData().value
+            for(var i = 0; i < historyData.length; i++ ) {
+              var id = 'smartChart_' + i;
+              var value = historyData[i].waitingPeople;
+              this.getView().byId(id).setValue(value);
+            }
+
+
+
+            
+            
+            // oTicketModel.loadData("/besucherstrom-ui/EntrancesHistoryStatusß('" + code + "')", "" , false)
+
+            this.oView.byId('ticket-block').setText(data.block_ID)
+            this.oView.byId('ticket-date').setText(data.eventDate)
+            this.oView.byId('ticket-entrance').setText(data.entranceName)
+            this.oView.byId('ticket-event').setText(data.eventName)
+            this.oView.byId('ticket-perfecttime').setText(data.perfectTime)
+
+
+            this.oView.byId('barcode-scan-url').setVisible(false)
+            this.oView.byId('barcode-scan-barcode').setVisible(true)
+
+            $("#" + this.oView.byId('barcode-scan-barcode')).ready( () => {
+              JsBarcode("#" + this.oView.byId('barcode-scan-barcode').sId, code, {
+                format: 'CODE128',
+                lineColor: '#000',
+                width: 2,
+                height: 40,
+                displayValue: false
+              })
+            })
+
+
+
+          } else {
+            this.oView.byId('barcode-scan-url').setVisible(true)
+            this.oView.byId('barcode-scan-barcode').setVisible(false)
+            this.oView
+              .byId('barcode-scan-url')
+              .setHref(
+                'http://zxing.appspot.com/scan?ret=' +
+                  encodeURIComponent(window.location.href + '?code={CODE}') +
+                  '&SCAN_FORMATS=CODE_128'
+              )
+          }
         },
 
         /* =========================================================== */
