@@ -1,0 +1,32 @@
+<core:FragmentDefinition  xmlns="sap.m" xmlns:f="sap.f" xmlns:core="sap.ui.core"
+  xmlns:l="sap.ui.layout" xmlns:micro="sap.suite.ui.microchart">
+   
+    <VBox class="transparentResult">
+      <HBox class="sapUiSmallMargin" justifyContent="SpaceBetween">
+        <Text text="Dein Block:"/>
+<Text text="K4"/>
+      </HBox>
+      <HBox class="sapUiSmallMargin" justifyContent="SpaceBetween">
+        <Text text="Dein Eingang:"/>
+<Text text="Lenéstraße, Eingang K,L,M"/>
+      </HBox>
+      <HBox class="sapUiSmallMargin" justifyContent="SpaceBetween">
+        <Text text="Voraussichtliche Auslastung:"/>
+<micro:ColumnMicroChart size="M" class="sapUiSmallMargin">
+		<micro:columns>
+			<micro:ColumnMicroChartData	value="60" color="Neutral"/>
+			<micro:ColumnMicroChartData	value="80" color="Neutral"/>
+			<micro:ColumnMicroChartData	value="100" color="Neutral"/>
+			<micro:ColumnMicroChartData	value="60" color="Neutral"/>
+			<micro:ColumnMicroChartData	value="55" color="Neutral"/>
+			<micro:ColumnMicroChartData	value="15" color="Neutral"/>
+		</micro:columns>
+	</micro:ColumnMicroChart>
+      </HBox>
+      <HBox class="sapUiSmallMargin" justifyContent="SpaceBetween">
+        <Text text="Perfekte Ankunftszeit:"/>
+<Text text="12:45 Uhr"/>
+      </HBox>
+    </VBox>
+
+</core:FragmentDefinition >
