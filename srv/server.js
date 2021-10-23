@@ -38,8 +38,9 @@ async function fetchAndDecrypt (privateKey, url, method, headers) {
 }
 
 async function readCredential (binding, namespace, type, name) {
-  if (process.env.name) {
-    return process.env.name
+
+  if (process.env[name]) {
+    return process.env[name]
   }
   return fetchAndDecrypt(
     binding.encryption.client_private_key,
