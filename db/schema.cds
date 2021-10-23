@@ -17,6 +17,9 @@ entity EntrancesCurrentStatus {
     key entrance : Association to one Entrances;
     key event : Association to one Events;
     status : String;
+    color : String;
+    waitingTime : Integer;
+    waitingPeople : Integer;
 }
 
 entity EntrancesHistoryStatus {

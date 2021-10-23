@@ -3,22 +3,34 @@
         {
             "entrance_ID": "AE",
             "event_ID": "1",
-            "status": "hoch"
+            "status": "hoch",
+            "color": "red",
+            "waitingTime": 15,
+            "waitingPeople": 150
         },
         {
             "entrance_ID": "ST",
             "event_ID": "1",
-            "status": "hoch"
+            "status": "hoch",
+            "color": "red",
+            "waitingTime": 4,
+            "waitingPeople": 30
         },
         {
             "entrance_ID": "LR",
             "event_ID": "1",
-            "status": "normal"
+            "status": "normal",
+            "color": "green",
+            "waitingTime": 0,
+            "waitingPeople": 5
         },
         {
             "entrance_ID": "FK",
             "event_ID": "1",
-            "status": "normal"
+            "status": "normal",
+            "color": "orange",
+            "waitingTime": 1,
+            "waitingPeople": 10
         }
     ]
 }
