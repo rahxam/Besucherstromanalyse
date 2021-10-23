@@ -16,7 +16,7 @@
                   </HBox>
                   <VBox alignItems="Center">
                   <!-- <core:Fragment fragmentName="odc.hackaton.besucherstrom-ui.view.fragments.Result" type="XML"/> -->
-                    <core:Fragment fragmentName="odc.hackaton.besucherstrom-ui.view.fragments.Map" type="XML"/>
+                    <core:Fragment fragmentName="odc.hackaton.besucherstrom-ui.view.fragments.MapAdmin" type="XML"/>
                   </VBox>
                 </content>
             

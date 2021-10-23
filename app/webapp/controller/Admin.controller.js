@@ -192,7 +192,7 @@ sap.ui.define(
         setSvgData: function(oEvent){
           //debugger;
           var that = this;
-          var oSvgGraphic = this.getView().byId("StadionMap").getDomRef().contentDocument;
+          var oSvgGraphic = this.getView().byId("StadionMapAdmin").getDomRef().contentDocument;
           //oSvgGraphic.getElementById("svg161");
           var oObenLinks = oSvgGraphic.getElementById("dot_obenlinks");
           oObenLinks.style.fill = "red";
@@ -228,7 +228,7 @@ sap.ui.define(
           var that = this;
           //var oButton = oEvent.getSource(),
           var oView = this.getView();
-          var oSvgGraphic = this.getView().byId("StadionMap").getDomRef().contentDocument;
+          var oSvgGraphic = this.getView().byId("StadionMapAdmin").getDomRef().contentDocument;
           var oObjectCircle = oSvgGraphic.getElementById(stest);
           
           // create popover

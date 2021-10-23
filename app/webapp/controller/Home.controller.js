@@ -136,6 +136,21 @@ sap.ui.define(
           }
         },
 
+        onAfterRendering: function (){
+          var oSvgGraphic = this.getView().byId("StadionMap");
+          //oSvgGraphic.addEventDelegate(this.setSvgData, this);
+          //oSvgGraphic.attachAfterRendering(this.setSvgData);
+          //debugger;
+          var that = this;
+
+
+          setTimeout(function(){
+            that.setSvgData();
+          }, 2000);
+          
+
+        },
+
         /* =========================================================== */
         /* event handlers                                              */
         /* =========================================================== */
@@ -296,6 +311,10 @@ sap.ui.define(
           oUntenRechts.addEventListener("mousedown", function(){
             that.onClickDot("dot_untenrechts");
           });
+
+          var oE1 = oSvgGraphic.getElementById("path1914");
+          debugger;
+          oE1.style.fill = "#fdc300";
           
         },
 
