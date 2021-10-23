@@ -1,16 +1,15 @@
 <core:FragmentDefinition  xmlns="sap.m" xmlns:f="sap.f" xmlns:core="sap.ui.core"
   xmlns:l="sap.ui.layout" xmlns:micro="sap.suite.ui.microchart">
    
-    <VBox class="transparentResult">
+    <VBox class="transparentResult" id="fragmentResult">
       <HBox class="sapUiSmallMargin" justifyContent="SpaceBetween">
-        <Text id="ticket-event" text=""/>
+        <Title id="ticket-event" text=""/>
       </HBox>
       <HBox class="sapUiSmallMargin" justifyContent="SpaceBetween">
         <Text id="ticket-date" text=""/>
       </HBox>
       <HBox class="sapUiSmallMargin" justifyContent="SpaceBetween">
         <Text text="Dein Ticket:"/>
-        <Link class="barcode-scan-url" id="barcode-scan-url" href="http://dummy.de" text="Scanne dein Ticket" />
         <Image class="barcode-scan-barcode" id="barcode-scan-barcode" />
       </HBox>
       <HBox class="sapUiSmallMargin" justifyContent="SpaceBetween">
@@ -21,6 +20,10 @@
       <HBox class="sapUiSmallMargin" justifyContent="SpaceBetween">
         <Text text="Dein Eingang:"/>
         <Text id="ticket-entrance" text=""/>
+      </HBox>
+      <HBox class="sapUiSmallMargin" justifyContent="SpaceBetween">
+        <Text text="Aktuelle Wartezeit:"/>
+        <Text id="ticket-waitingTime" text="12 Minuten"/>
       </HBox>
       <HBox class="sapUiSmallMargin" justifyContent="SpaceBetween">
         <Text text="Voraussichtliche Auslastung:"/>

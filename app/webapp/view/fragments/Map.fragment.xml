@@ -1,7 +1,7 @@
 <core:FragmentDefinition  xmlns="sap.m" xmlns:f="sap.f" xmlns:core="sap.ui.core" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:l="sap.ui.layout">
    
     <!-- <Text text="Place Map Here"/> -->
-    <VBox class="transparentResult">
+    <VBox class="transparentResult" id="mapFragment">
 
       <html:object
         data="view/fragments/StadionMap.svg"
