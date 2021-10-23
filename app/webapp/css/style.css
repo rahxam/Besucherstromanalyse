@@ -13,6 +13,7 @@
 }
  
 .sapMText {
+  color: #fff !important;
   line-height: 1.5 !important;
   text-align: justify;
 }
@@ -30,11 +31,6 @@
   font-size: 11px !important;
 }
 
- .sapMText, .sapMLabel, .sapMListTbl .sapMText, .sapMListTbl .sapMLabel {
-   color: #666666;
-   font-size: 15px;
-  font-family: 'CorpidRegular300', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
 
 .sapMLnk:not(.sapMLnkDsbl) {
     text-shadow: none  !important;
@@ -320,13 +316,6 @@ border: none;
     border-radius: 1px !important; 
 }
 
-
-.sapMPopover .sapMText {  
-    font-size: 13px !important;  
-    border: 1px #ffd300 !important;
-    max-width: 400px !important;
-    min-width: 100px !important;
-}
 
 .sapMPopoverHeader .sapMBar .sapMBarMiddle .sapMBarContainer {
     background-color: #ffd300 !important;

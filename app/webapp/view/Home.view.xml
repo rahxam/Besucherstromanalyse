@@ -13,6 +13,9 @@
                     <Button text="R.-H.-STADION" class="headerButton" type="Transparent"/>
                     <Button text="KONTAKT" class="headerButton" type="Transparent"/>
                   </HBox>
+                  <VBox alignItems="Center">
+                    <core:Fragment fragmentName="odc.hackaton.besucherstrom-ui.view.fragments.Map" type="XML"/>
+                  </VBox>
                 </content>
             
             </Page>

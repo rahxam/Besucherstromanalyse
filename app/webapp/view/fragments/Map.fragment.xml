@@ -1,0 +1,6 @@
+<core:FragmentDefinition  xmlns="sap.m" xmlns:f="sap.f" xmlns:core="sap.ui.core"
+  xmlns:l="sap.ui.layout">
+   
+    <Text text="Place Map Here"/>
+
+</core:FragmentDefinition >
