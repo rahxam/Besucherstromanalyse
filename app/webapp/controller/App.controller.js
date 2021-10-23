@@ -9,6 +9,7 @@ sap.ui.define([
       // apply content density mode to root view
       this.getView().addStyleClass(this.getOwnerComponent().getContentDensityClass())
       this.setImageModel();
+      //this.setSvgData();
     },
 
     setImageModel: function(){
@@ -20,5 +21,7 @@ sap.ui.define([
 
         this.getOwnerComponent().getModel("img").setData(images);
     }
+
+    
   })
 })
