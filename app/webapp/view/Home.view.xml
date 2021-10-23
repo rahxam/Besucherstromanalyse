@@ -3,9 +3,16 @@
     xmlns:form="sap.ui.layout.form" xmlns:l="sap.ui.layout">
     <NavContainer id="wizardNavContainer">
         <pages>
-            <Page id="wizardContentPage" class="homePage" showHeader="false" showFooter="false">
+            <Page id="mainPage" class="homePage" showHeader="false" showFooter="false">
                 <content>        
-                  <Text text="coming soon"/>
+                  <HBox justifyContent="SpaceBetween" alignItems="Center" class="sapUiSmallMargin">
+                    <Image src="{img>/logo}"/>
+                    <Button text="TICKETS &amp; TERMINE" class="headerButton" type="Transparent"/>
+                    <Button text="STADIONTOUR" class="headerButton" type="Transparent"/>
+                    <Button text="SPORT &amp; EVENT" class="headerButton" type="Transparent"/>
+                    <Button text="R.-H.-STADION" class="headerButton" type="Transparent"/>
+                    <Button text="KONTAKT" class="headerButton" type="Transparent"/>
+                  </HBox>
                 </content>
             
             </Page>

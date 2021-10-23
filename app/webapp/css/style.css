@@ -4,14 +4,14 @@
     font-weight:normal;
     src:local("SourceSansPro"), url("/fonts/SourceSansPro-Regular.ttf") format("ttf");
 } 
- 
- .resultTitle {
-  color: #002065 !important;
-  font-family: 'SourceSansPro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 24px !important;
-  font-weight:bold;
-}
 
+.sapMBtnInner{
+  color: #fff !important;
+  font-family: 'SourceSansPro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 15px !important;
+  font-weight:bold !important;
+}
+ 
 .sapMText {
   line-height: 1.5 !important;
   text-align: justify;
@@ -49,16 +49,6 @@
   margin-left: 0px !important;
   padding-left: 0px !important;
   font-family: 'CorpidRegular300', 'Helvetica Neue', Helvetica, Arial, sans-serif  !important;
-}
-
-.sapFShellBarPrimaryTitle {
-  color: #002065 !important;
-  font-size: 25px !important;
-  font-weight: bold !important;
-  margin-left: 0px !important;
-  padding-left: 0px !important;
-  font-family: 'SourceSansPro', 'Helvetica Neue', Helvetica, Arial, sans-serif  !important;
-
 }
 
 .titlePage {
@@ -116,11 +106,15 @@
 
 .sapFShellBar {
   background-color: #000 !important;
-  min-height: 65px !important;
+  min-height: 100px !important;
   box-shadow: none !important;
-  max-width: 1020px !important;
   margin: 0 auto !important;
   padding: 0 10px !important;
+}
+
+.sapFShellBar .sapFShellBarHomeIcon {
+    height: 100%;
+    vertical-align: bottom;
 }
 
 .sapFShellBar .sapMTB-Transparent-CTX .sapFShellBarItem .sapMBtn .sapMBtnIcon {
@@ -206,51 +200,6 @@ border-top: 1px solid #ffd300 !important;
     box-shadow: none !important;
 }
 
-.sapMBtnInner {
-  border-radius: 2px;
-  background-color: transparent !important;
-  border-color: transparent !important;
-  font-weight: normal !important;
-  color: #ffd300 !important;
-}
-
-.ButtonBar .sapMBtnInner,  .sapMFooter-CTX .sapMBtnInner {
-  border-radius: 2px;
-  font-weight: normal !important;
-  text-shadow: none !important;
-    color: #ffd300 !important;
-    border-color: #ffd300 !important;
-
-}
-.ButtonBar .sapMBtnInner:hover, .sapMFooter-CTX .sapMBtnInner:hover  {
-    color: #ffd300  !important;
-    border-color: #ffd300 !important;
-    background-color: #e5f0fa !important;
-    border: 1px solid #ffd300 !important;
-}
-
-
-span.sapMBtnInner.sapMBtnEmphasized:hover {
-    background-color: #e5f0fa !important;
-    border-color: #ffd300 !important;
-}
-
-span.sapMBtnInner.sapMBtnEmphasized {
-    background-color: #ffd300  !important;;
-    border-color: #ffd300  !important;
-    color: #000 !important;
- 
-}
-
-.sapMFooter-CTX .sapMBtnInner.sapMBtnEmphasized:hover {
-    background-color: #e5f0fa !important;
-    border-color: #ffd300 !important;
-}
-.sapMFooter-CTX .sapMBtnInner.sapMBtnEmphasized {
-    background-color: #ffd300  !important;;
-    border-color: #ffd300  !important;;
- 
-}
 
 
 span.sapMBtnInner.sapMBtnTransparent {
