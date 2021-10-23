@@ -5,13 +5,19 @@
         <pages>
             <Page id="mainPage" class="homePage" showHeader="false" showFooter="false">
                 <content>        
-                  <HBox justifyContent="SpaceBetween" alignItems="Center" class="sapUiSmallMargin">
+                <!--Desktop NavBar-->
+                  <HBox justifyContent="SpaceBetween" alignItems="Center" class="sapUiSmallMargin sapUiVisibleOnlyOnDesktop">
                     <Image src="{img>/logo}"/>
-                    <Button text="TICKETS &amp; TERMINE" class="headerButton" type="Transparent"/>
-                    <Button text="STADIONTOUR" class="headerButton" type="Transparent"/>
-                    <Button text="SPORT &amp; EVENT" class="headerButton" type="Transparent"/>
-                    <Button text="R.-H.-STADION" class="headerButton" type="Transparent"/>
-                    <Button text="KONTAKT" class="headerButton" type="Transparent"/>
+                    <Button text="TICKETS &amp; TERMINE" class="headerButton " type="Transparent"/>
+                    <Button text="STADIONTOUR" class="headerButton sapUiVisibleOnlyOnDesktop" type="Transparent"/>
+                    <Button text="SPORT &amp; EVENT" class="headerButton sapUiVisibleOnlyOnDesktop" type="Transparent"/>
+                    <Button text="R.-H.-STADION" class="headerButton sapUiVisibleOnlyOnDesktop" type="Transparent"/>
+                    <Button text="KONTAKT" class="headerButton sapUiVisibleOnlyOnDesktop" type="Transparent"/>
+                  </HBox>
+                  <!--Smartphone NavBar-->
+                  <HBox justifyContent="SpaceBetween sapUiHideOnDesktop" alignItems="Center" class="sapUiSmallMargin">
+                    <Image src="{img>/logo}" height="5em"/>
+                    <Button text="BESUCHERSTROM" class="sapUiSmallMarginBegin headerButtonMobile " type="Transparent"/>
                   </HBox>
                   <VBox alignItems="Center">
                   <core:Fragment fragmentName="odc.hackaton.besucherstrom-ui.view.fragments.Result" type="XML"/>
