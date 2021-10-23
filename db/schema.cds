@@ -26,7 +26,9 @@ entity EntrancesHistoryStatus {
     key entrance : Association to one Entrances;
     key event : Association to one Events;
     key date : DateTime;
-    value : Double;
+    percentage : Double;
+    waitingTime : Integer;
+    waitingPeople : Integer;
 }
 
 entity Entrances {
