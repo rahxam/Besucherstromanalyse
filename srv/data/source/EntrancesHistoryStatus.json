@@ -2,6 +2,315 @@
     "values": [
         {
             "entrance_ID": "AE",
+            "event_ID": "3",
+            "date": "2021-10-27T16:30:00.000Z",
+            "value": 0.1
+        },
+        {
+            "entrance_ID": "AE",
+            "event_ID": "3",
+            "date": "2021-10-27T16:40:00.000Z",
+            "value": 0.1
+        },
+        {
+            "entrance_ID": "AE",
+            "event_ID": "3",
+            "date": "2021-10-27T16:50:00.000Z",
+            "value": 0.1
+        },
+        {
+            "entrance_ID": "AE",
+            "event_ID": "3",
+            "date": "2021-10-27T17:00:00.000Z",
+            "value": 0.2
+        },
+        {
+            "entrance_ID": "AE",
+            "event_ID": "3",
+            "date": "2021-10-27T17:10:00.000Z",
+            "value": 0.4
+        },
+        {
+            "entrance_ID": "AE",
+            "event_ID": "3",
+            "date": "2021-10-27T17:20:00.000Z",
+            "value": 0.5
+        },
+        {
+            "entrance_ID": "AE",
+            "event_ID": "3",
+            "date": "2021-10-27T17:30:00.000Z",
+            "value": 0.6
+        },
+        {
+            "entrance_ID": "AE",
+            "event_ID": "3",
+            "date": "2021-10-27T17:40:00.000Z",
+            "value": 0.7
+        },
+        {
+            "entrance_ID": "AE",
+            "event_ID": "3",
+            "date": "2021-10-27T17:50:00.000Z",
+            "value": 0.8
+        },
+        {
+            "entrance_ID": "AE",
+            "event_ID": "3",
+            "date": "2021-10-27T18:00:00.000Z",
+            "value": 1
+        },
+        {
+            "entrance_ID": "AE",
+            "event_ID": "3",
+            "date": "2021-10-27T18:10:00.000Z",
+            "value": 1
+        },
+        {
+            "entrance_ID": "AE",
+            "event_ID": "3",
+            "date": "2021-10-27T18:20:00.000Z",
+            "value": 1
+        },
+        {
+            "entrance_ID": "AE",
+            "event_ID": "3",
+            "date": "2021-10-27T18:30:00.000Z",
+            "value": 0.9
+        },{
+            "entrance_ID": "ST",
+            "event_ID": "3",
+            "date": "2021-10-27T16:30:00.000Z",
+            "value": 0.1
+        },
+        {
+            "entrance_ID": "ST",
+            "event_ID": "3",
+            "date": "2021-10-27T16:40:00.000Z",
+            "value": 0.1
+        },
+        {
+            "entrance_ID": "ST",
+            "event_ID": "3",
+            "date": "2021-10-27T16:50:00.000Z",
+            "value": 0.1
+        },
+        {
+            "entrance_ID": "ST",
+            "event_ID": "3",
+            "date": "2021-10-27T17:00:00.000Z",
+            "value": 0.2
+        },
+        {
+            "entrance_ID": "ST",
+            "event_ID": "3",
+            "date": "2021-10-27T17:10:00.000Z",
+            "value": 0.4
+        },
+        {
+            "entrance_ID": "ST",
+            "event_ID": "3",
+            "date": "2021-10-27T17:20:00.000Z",
+            "value": 0.5
+        },
+        {
+            "entrance_ID": "ST",
+            "event_ID": "3",
+            "date": "2021-10-27T17:30:00.000Z",
+            "value": 0.6
+        },
+        {
+            "entrance_ID": "ST",
+            "event_ID": "3",
+            "date": "2021-10-27T17:40:00.000Z",
+            "value": 0.5
+        },
+        {
+            "entrance_ID": "ST",
+            "event_ID": "3",
+            "date": "2021-10-27T17:50:00.000Z",
+            "value": 0.7
+        },
+        {
+            "entrance_ID": "ST",
+            "event_ID": "3",
+            "date": "2021-10-27T18:00:00.000Z",
+            "value": 0.9
+        },
+        {
+            "entrance_ID": "ST",
+            "event_ID": "3",
+            "date": "2021-10-27T18:10:00.000Z",
+            "value": 1
+        },
+        {
+            "entrance_ID": "ST",
+            "event_ID": "3",
+            "date": "2021-10-27T18:20:00.000Z",
+            "value": 1
+        },
+        {
+            "entrance_ID": "ST",
+            "event_ID": "3",
+            "date": "2021-10-27T18:30:00.000Z",
+            "value": 0.8
+        },{
+            "entrance_ID": "LR",
+            "event_ID": "3",
+            "date": "2021-10-27T16:30:00.000Z",
+            "value": 0.1
+        },
+        {
+            "entrance_ID": "LR",
+            "event_ID": "3",
+            "date": "2021-10-27T16:40:00.000Z",
+            "value": 0.1
+        },
+        {
+            "entrance_ID": "LR",
+            "event_ID": "3",
+            "date": "2021-10-27T16:50:00.000Z",
+            "value": 0.1
+        },
+        {
+            "entrance_ID": "LR",
+            "event_ID": "3",
+            "date": "2021-10-27T17:00:00.000Z",
+            "value": 0.2
+        },
+        {
+            "entrance_ID": "LR",
+            "event_ID": "3",
+            "date": "2021-10-27T17:10:00.000Z",
+            "value": 0.4
+        },
+        {
+            "entrance_ID": "LR",
+            "event_ID": "3",
+            "date": "2021-10-27T17:20:00.000Z",
+            "value": 0.5
+        },
+        {
+            "entrance_ID": "LR",
+            "event_ID": "3",
+            "date": "2021-10-27T17:30:00.000Z",
+            "value": 0.9
+        },
+        {
+            "entrance_ID": "LR",
+            "event_ID": "3",
+            "date": "2021-10-27T17:40:00.000Z",
+            "value": 0.9
+        },
+        {
+            "entrance_ID": "LR",
+            "event_ID": "3",
+            "date": "2021-10-27T17:50:00.000Z",
+            "value": 0.9
+        },
+        {
+            "entrance_ID": "LR",
+            "event_ID": "3",
+            "date": "2021-10-27T18:00:00.000Z",
+            "value": 0.9
+        },
+        {
+            "entrance_ID": "LR",
+            "event_ID": "3",
+            "date": "2021-10-27T18:10:00.000Z",
+            "value": 1
+        },
+        {
+            "entrance_ID": "LR",
+            "event_ID": "3",
+            "date": "2021-10-27T18:20:00.000Z",
+            "value": 1
+        },
+        {
+            "entrance_ID": "LR",
+            "event_ID": "3",
+            "date": "2021-10-27T18:30:00.000Z",
+            "value": 0.8
+        },{
+            "entrance_ID": "FK",
+            "event_ID": "3",
+            "date": "2021-10-27T16:30:00.000Z",
+            "value": 0.1
+        },
+        {
+            "entrance_ID": "FK",
+            "event_ID": "3",
+            "date": "2021-10-27T16:40:00.000Z",
+            "value": 0.1
+        },
+        {
+            "entrance_ID": "FK",
+            "event_ID": "3",
+            "date": "2021-10-27T16:50:00.000Z",
+            "value": 0.1
+        },
+        {
+            "entrance_ID": "FK",
+            "event_ID": "3",
+            "date": "2021-10-27T17:00:00.000Z",
+            "value": 0.2
+        },
+        {
+            "entrance_ID": "FK",
+            "event_ID": "3",
+            "date": "2021-10-27T17:10:00.000Z",
+            "value": 0.4
+        },
+        {
+            "entrance_ID": "FK",
+            "event_ID": "3",
+            "date": "2021-10-27T17:20:00.000Z",
+            "value": 0.5
+        },
+        {
+            "entrance_ID": "FK",
+            "event_ID": "3",
+            "date": "2021-10-27T17:30:00.000Z",
+            "value": 0.8
+        },
+        {
+            "entrance_ID": "FK",
+            "event_ID": "3",
+            "date": "2021-10-27T17:40:00.000Z",
+            "value": 0.9
+        },
+        {
+            "entrance_ID": "FK",
+            "event_ID": "3",
+            "date": "2021-10-27T17:50:00.000Z",
+            "value": 1
+        },
+        {
+            "entrance_ID": "FK",
+            "event_ID": "3",
+            "date": "2021-10-27T18:00:00.000Z",
+            "value": 1
+        },
+        {
+            "entrance_ID": "FK",
+            "event_ID": "3",
+            "date": "2021-10-27T18:10:00.000Z",
+            "value": 1
+        },
+        {
+            "entrance_ID": "FK",
+            "event_ID": "3",
+            "date": "2021-10-27T18:20:00.000Z",
+            "value": 1
+        },
+        {
+            "entrance_ID": "FK",
+            "event_ID": "3",
+            "date": "2021-10-27T18:30:00.000Z",
+            "value": 0.8
+        },
+        {
+            "entrance_ID": "AE",
             "event_ID": "1",
             "date": "2021-10-30T11:30:00.000Z",
             "value": 0.1

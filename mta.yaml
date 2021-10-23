@@ -67,6 +67,7 @@ modules:
       - name: besucherstrom-logs
       - name: besucherstrom-dest
       - name: besucherstrom-uaa
+      - name: besucherstrom-cred
     provides:
       - name: besucherstrom-srv-binding
         properties:
@@ -100,4 +101,9 @@ resources:
     parameters:
       service-plan: lite
       service: destination
+    type: org.cloudfoundry.managed-service
+  - name: besucherstrom-cred
+    parameters:
+      service-plan: trial
+      service: credstore
     type: org.cloudfoundry.managed-service

@@ -28,6 +28,15 @@
             "ID": "L4",
             "entrance_ID": "LR"
         },{
+            "ID": "E1",
+            "entrance_ID": "AE"
+        },{
+            "ID": "E2",
+            "entrance_ID": "AE"
+        },{
+            "ID": "E3",
+            "entrance_ID": "AE"
+        },{
             "ID": "A1",
             "entrance_ID": "AE"
         },{
