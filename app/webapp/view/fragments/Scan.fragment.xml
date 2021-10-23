@@ -1,0 +1,15 @@
+<core:FragmentDefinition  xmlns="sap.m" xmlns:f="sap.f" xmlns:core="sap.ui.core"
+  xmlns:l="sap.ui.layout">
+   
+    <VBox class="transparentResult">
+      <!-- class="sapUiTinyMarginBeginEnd" -->
+      <Button
+					id="BadgedButton"
+					
+					icon="sap-icon://activate"
+					type="Emphasized"
+					text="Ticket einscannen">			
+				</Button>
+    </VBox>
+
+</core:FragmentDefinition >

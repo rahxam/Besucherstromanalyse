@@ -39,6 +39,9 @@
   text-align: justify;
   font-family: 'SourceSansPro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
+.sapMTitle {
+  color: #fff !important;
+}
 
 .sapSuiteClMCInnerBar.sapSuiteClMCSemanticColorNeutral {
     background-color: #ffd300 !important;

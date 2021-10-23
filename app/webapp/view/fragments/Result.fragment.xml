@@ -3,7 +3,7 @@
    
     <VBox class="transparentResult">
       <HBox class="sapUiSmallMargin" justifyContent="SpaceBetween">
-        <Text id="ticket-event" text=""/>
+        <Title id="ticket-event" text=""/>
       </HBox>
       <HBox class="sapUiSmallMargin" justifyContent="SpaceBetween">
         <Text id="ticket-date" text=""/>
@@ -21,6 +21,10 @@
       <HBox class="sapUiSmallMargin" justifyContent="SpaceBetween">
         <Text text="Dein Eingang:"/>
         <Text id="ticket-entrance" text=""/>
+      </HBox>
+      <HBox class="sapUiSmallMargin" justifyContent="SpaceBetween">
+        <Text text="Aktuelle Wartezeit:"/>
+        <Text id="ticket-waitingTime" text="12 Minuten"/>
       </HBox>
       <HBox class="sapUiSmallMargin" justifyContent="SpaceBetween">
         <Text text="Voraussichtliche Auslastung:"/>
