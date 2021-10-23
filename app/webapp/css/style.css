@@ -132,3 +132,7 @@ border: none;
 .sapUiFormContainerToolbar>.sapMTB-Transparent-CTX.sapMTB {
     display: none;
 }
+
+.sapMPanelHdr {
+  color: #fff;
+}

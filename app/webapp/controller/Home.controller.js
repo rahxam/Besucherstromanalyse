@@ -5,9 +5,10 @@ sap.ui.define(
     'sap/ui/model/json/JSONModel',
     '../model/formatter',
     'sap/ui/model/Filter',
-    'sap/ui/model/FilterOperator'
+    'sap/ui/model/FilterOperator',
+    'sap/ui/core/Fragment'
   ],
-  function (BaseController, JSONModel, formatter, Filter, FilterOperator) {
+  function (BaseController, JSONModel, formatter, Filter, FilterOperator, Fragment) {
     'use strict'
 
     return BaseController.extend(
@@ -259,7 +260,75 @@ sap.ui.define(
               this.getResourceBundle().getText('worklistNoDataWithSearchText')
             )
           }
+        },
+
+
+
+        setSvgData: function(oEvent){
+          //debugger;
+          var that = this;
+          var oSvgGraphic = this.getView().byId("StadionMap").getDomRef().contentDocument;
+          //oSvgGraphic.getElementById("svg161");
+          var oObenLinks = oSvgGraphic.getElementById("dot_obenlinks");
+          oObenLinks.style.fill = "red";
+          oObenLinks.style.stroke = "red";
+          oObenLinks.addEventListener("mousedown", function(){
+            that.onClickDot("dot_obenlinks");
+          });
+
+          var oObenRechts = oSvgGraphic.getElementById("dot_obenrechts");
+          oObenRechts.style.fill = "yellow";
+          oObenRechts.style.stroke = "yellow";
+          oObenRechts.addEventListener("mousedown", function(){
+            that.onClickDot("dot_obenrechts");
+          });
+
+          var oUntenLinks = oSvgGraphic.getElementById("dot_untenlinks");
+          oUntenLinks.style.fill = "green";
+          oUntenLinks.style.stroke = "green";
+          oUntenLinks.addEventListener("mousedown", function(){
+            that.onClickDot("dot_untenlinks");
+          });
+
+          var oUntenRechts = oSvgGraphic.getElementById("dot_untenrechts");
+          oUntenRechts.style.fill = "green";
+          oUntenRechts.style.stroke = "green";
+          oUntenRechts.addEventListener("mousedown", function(){
+            that.onClickDot("dot_untenrechts");
+          });
+          
+        },
+
+        onClickDot: function(stest){
+          var that = this;
+          //var oButton = oEvent.getSource(),
+          var oView = this.getView();
+          var oSvgGraphic = this.getView().byId("StadionMap").getDomRef().contentDocument;
+          var oObjectCircle = oSvgGraphic.getElementById(stest);
+          
+          // create popover
+          if (!that._oDialog) {
+            that._oDialog = Fragment.load({
+              id: oView.getId(),
+              name: "odc.hackaton.besucherstrom-ui.view.fragments.Dialog",
+              controller: that
+            }).then(function(oDialog) {
+              oView.addDependent(oDialog);
+              return oDialog;
+            });
+          }
+          that._oDialog.then(function(oDialog) {
+            oDialog.open();
+          });
+
+        },
+
+        onCloseDialog: function () {
+          this.byId("myDialog").close();
+          //this.byId("employeeDialog").destroy();
         }
+
+
       }
     )
   }
