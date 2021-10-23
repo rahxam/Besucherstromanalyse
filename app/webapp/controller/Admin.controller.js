@@ -55,7 +55,6 @@ sap.ui.define(
 
 
           setTimeout(function(){
-            
             that.setSvgData();
           }, 2000);
           

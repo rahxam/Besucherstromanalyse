@@ -15,7 +15,7 @@
                     <Button text="KONTAKT" class="headerButton sapUiVisibleOnlyOnDesktop" type="Transparent"/>
                   </HBox>
                   <VBox alignItems="Center">
-                  <core:Fragment fragmentName="odc.hackaton.besucherstrom-ui.view.fragments.Result" type="XML"/>
+                  <!-- <core:Fragment fragmentName="odc.hackaton.besucherstrom-ui.view.fragments.Result" type="XML"/> -->
                     <core:Fragment fragmentName="odc.hackaton.besucherstrom-ui.view.fragments.Map" type="XML"/>
                   </VBox>
                 </content>
