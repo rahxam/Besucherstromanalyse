@@ -38,7 +38,6 @@ async function fetchAndDecrypt (privateKey, url, method, headers) {
 }
 
 async function readCredential (binding, namespace, type, name) {
-
   if (process.env[name]) {
     return process.env[name]
   }
@@ -86,15 +85,20 @@ cds.on('bootstrap', async (app) => {
   app.use(cookieParser())
 
   app.post('/subscribe', express.json(), (req, res) => {
-    subscriptions.push(req.body)
+    if (subscriptions.findIndex(x => x.keys.p256dh === req.body.keys.p256dh) === -1) {
+      subscriptions.push(req.body)
+      console.log('subscribed')
+    } else {
+      console.log('already subscribed')
+    }
+
     res.status(201).json({})
   })
 
   app.get('/notify', (req, res) => {
-    console.log(req.body)
     const payload = JSON.stringify({
       title: 'Ohne Wartezeit ins Stadion!',
-      body: 'Sei 12:14 Uhr am Eingang Leneplatz'
+      body: 'Sei 17:14 Uhr am Eingang Leneplatz'
     })
 
     subscriptions.forEach((subscription) => {

@@ -1,5 +1,6 @@
 // node
 const path = require('path')
+const fs = require('fs')
 const { v4: uuidv4 } = require('uuid')
 const util = require('./data-generator-util')
 const createCsvWriter = require('csv-writer').createObjectCsvWriter
@@ -76,8 +77,36 @@ module.exports = class {
     }
   }
 
+  readHistory () {
+    this.data.EntrancesHistoryStatus = []
+
+    const data = JSON.parse(fs.readFileSync(path.resolve(path.resolve(__dirname, 'import'), 'example_plot_data.json'), 'utf-8')).CountOfPersons
+    let x = 0
+    for (const [key, value] of Object.entries(data)) {
+      x++
+      if(x === 8) {
+        ['AE', 'FK', 'ST', 'LR'].forEach(entry => {
+        
+          this.data.EntrancesHistoryStatus.push({
+            entrance_ID: entry,
+            event_ID: '3',
+            date: key.replace(' ', 'T') + '.000Z',
+            percentage: value > 0 ? value / 500 : 0,
+            waitingPeople: value,
+            waitingTime: Math.round(value > 100 ? (value > 500 ? value / 40 : value / 100) : 0)
+          })
+        })
+
+        x=0
+      }
+      
+    }
+  }
+
   async writeCSV () {
     await this.parsing
+
+    this.readHistory()
 
     const namespace = 'odc.hackaton'
     const dirData = path.resolve(__dirname, '..', '..', 'db', 'data')

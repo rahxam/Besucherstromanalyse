@@ -85,7 +85,7 @@
 					"groupId": "$auto",
 					"synchronizationMode": "None",
 					"autoExpandSelect":true
-				}
+			}
       },
       "img": {
         "type": "sap.ui.model.json.JSONModel"
