@@ -1,6 +1,6 @@
 <mvc:View controllerName="odc.hackaton.besucherstrom-ui.controller.Home" xmlns:mvc="sap.ui.core.mvc"
     displayBlock="true" xmlns="sap.m" xmlns:f="sap.f" xmlns:core="sap.ui.core" xmlns:grid="sap.ui.layout.cssgrid"
-    xmlns:form="sap.ui.layout.form" xmlns:l="sap.ui.layout">
+    xmlns:form="sap.ui.layout.form" xmlns:l="sap.ui.layout" >
     <NavContainer id="wizardNavContainer">
         <pages>
             <Page id="mainPage" class="homePage" showHeader="false" showFooter="false">
@@ -14,6 +14,7 @@
                     <Button text="KONTAKT" class="headerButton" type="Transparent"/>
                   </HBox>
                   <VBox alignItems="Center">
+                  <core:Fragment fragmentName="odc.hackaton.besucherstrom-ui.view.fragments.Result" type="XML"/>
                     <core:Fragment fragmentName="odc.hackaton.besucherstrom-ui.view.fragments.Map" type="XML"/>
                   </VBox>
                 </content>

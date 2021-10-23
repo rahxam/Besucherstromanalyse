@@ -5,8 +5,25 @@
     src:local("SourceSansPro"), url("/fonts/SourceSansPro-Regular.ttf") format("ttf");
 } 
 
+.sapMBtn {
+  height: 100px !important;
+  background-color: black;
+  border: none;
+}
+
+.sapMBtn:hover {
+  color:#000 !important;
+  background-color: #ffd300;
+}
+
+.transparentResult{
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
 .sapMBtnInner{
   color: #fff !important;
+  background-color: black;
+  border: none;
   font-family: 'SourceSansPro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 15px !important;
   font-weight:bold !important;
@@ -16,6 +33,7 @@
   color: #fff !important;
   line-height: 1.5 !important;
   text-align: justify;
+  font-family: 'SourceSansPro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
  
 .titleFooter {
@@ -38,15 +56,6 @@
     font-family: 'CorpidRegular300', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-.sapMWizardProgressNavStepTitle {
-  color: #ffd300 !important;
-  font-size: 12px !important;
-  font-weight: normal !important;
-  margin-left: 0px !important;
-  padding-left: 0px !important;
-  font-family: 'CorpidRegular300', 'Helvetica Neue', Helvetica, Arial, sans-serif  !important;
-}
-
 .titlePage {
   color: #002065 !important;
   font-size: 38px !important;
@@ -63,24 +72,12 @@
   background-color: #e5f0fa !important;
 }
 
-.sapMWizardStep .sapMWizardStepTitle {
-  color: #002065 !important;
-  font-size: 24px !important;
-  font-weight: bold !important;
-  font-family: 'SourceSansPro', 'Helvetica Neue', Helvetica, Arial, sans-serif  !important;
-}
-
-
-.sapMBar, .sapMWizard.sapMWizardBgStandard .sapMWizardStepContainer {
-  background-color: #000;
-}
 
 .sapMFlexBoxAlignContentStretch {
     height: auto;
 }
 
 .homePage {
-  background-image: url("../image-resources/serviceportal_background.jpg") !important;
   background-size: cover !important;
   background-repeat: no-repeat !important;
   background-position: center !important;
@@ -93,29 +90,12 @@
     height: calc(100% - 65px) !important;
 }
 
-
 .pageContent {
     max-width: 1020px !important;
     margin: 0 auto !important;
     background-color: #000 !important;    
 }
 
-.sapFShellBar {
-  background-color: #000 !important;
-  min-height: 100px !important;
-  box-shadow: none !important;
-  margin: 0 auto !important;
-  padding: 0 10px !important;
-}
-
-.sapFShellBar .sapFShellBarHomeIcon {
-    height: 100%;
-    vertical-align: bottom;
-}
-
-.sapFShellBar .sapMTB-Transparent-CTX .sapFShellBarItem .sapMBtn .sapMBtnIcon {
-    color: #ffd300;
-}
 .sapMBtnTransparent>.sapMBtnIcon {
     color: #ffd300  !important;
 }
