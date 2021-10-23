@@ -111,8 +111,16 @@ sap.ui.define(
             this.oView.byId('ticket-event').setText(data.eventName)
             this.oView.byId('ticket-perfecttime').setText(data.perfectTime)
 
+            
+            this.oView.byId('scanFragment').setVisible(false)
+            this.oView.byId('mapFragment').setVisible(true)
+            this.oView.byId('fragmentResult').setVisible(true)
+            
             this.oView.byId('barcode-scan-url').setVisible(false)
             this.oView.byId('barcode-scan-barcode').setVisible(true)
+
+
+            
 
             $('#' + this.oView.byId('barcode-scan-barcode')).ready(() => {
               JsBarcode('#' + this.oView.byId('barcode-scan-barcode').sId, code, {
@@ -124,6 +132,9 @@ sap.ui.define(
               })
             })
           } else {
+            this.oView.byId('scanFragment').setVisible(true)
+            this.oView.byId('mapFragment').setVisible(false)
+            this.oView.byId('fragmentResult').setVisible(false)
             this.oView.byId('barcode-scan-url').setVisible(true)
             this.oView.byId('barcode-scan-barcode').setVisible(false)
             this.oView
@@ -135,7 +146,18 @@ sap.ui.define(
               )
           }
         },
-
+        scanTicket: function() {
+          this.oView
+          .byId('barcode-scan-url')
+          .setHref(
+            'http://zxing.appspot.com/scan?ret=' +
+              encodeURIComponent(window.location.href + '?code={CODE}') +
+              '&SCAN_FORMATS=CODE_128'
+          );
+          this.oView
+          .byId('barcode-scan-url').press();
+          
+        },
         /* =========================================================== */
         /* event handlers                                              */
         /* =========================================================== */

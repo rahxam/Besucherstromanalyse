@@ -1,7 +1,7 @@
 <core:FragmentDefinition  xmlns="sap.m" xmlns:f="sap.f" xmlns:core="sap.ui.core"
   xmlns:l="sap.ui.layout" xmlns:micro="sap.suite.ui.microchart">
    
-    <VBox class="transparentResult">
+    <VBox class="transparentResult" id="fragmentResult">
       <HBox class="sapUiSmallMargin" justifyContent="SpaceBetween">
         <Title id="ticket-event" text=""/>
       </HBox>
@@ -10,7 +10,6 @@
       </HBox>
       <HBox class="sapUiSmallMargin" justifyContent="SpaceBetween">
         <Text text="Dein Ticket:"/>
-        <Link class="barcode-scan-url" id="barcode-scan-url" href="http://dummy.de" text="Scanne dein Ticket" />
         <Image class="barcode-scan-barcode" id="barcode-scan-barcode" />
       </HBox>
       <HBox class="sapUiSmallMargin" justifyContent="SpaceBetween">

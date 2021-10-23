@@ -1,15 +1,10 @@
 <core:FragmentDefinition  xmlns="sap.m" xmlns:f="sap.f" xmlns:core="sap.ui.core"
   xmlns:l="sap.ui.layout">
    
-    <VBox class="transparentResult">
+    <VBox class="transparentResult" id="scanFragment">
       <!-- class="sapUiTinyMarginBeginEnd" -->
-      <Button
-					id="BadgedButton"
-					
-					icon="sap-icon://activate"
-					type="Emphasized"
-					text="Ticket einscannen">			
-				</Button>
+      
+        <Link class="barcode-scan-url" id="barcode-scan-url" href="http://dummy.de" text="Scanne dein Ticket" />
     </VBox>
 
 </core:FragmentDefinition >

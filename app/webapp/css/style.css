@@ -5,6 +5,13 @@
     src:local("SourceSansPro"), url("/fonts/SourceSansPro-Regular.ttf") format("ttf");
 } 
 
+.sapMLnk {
+  background-color: #fdc300;
+  padding: 1em;
+  text-shadow: none !important;
+  color: #000 !important;
+  font-weight: bold;
+}
 .sapMBtn {
   height: 100px !important;
   background-color: black;
