@@ -8,17 +8,17 @@ sap.ui.define([
     onInit: function () {
       // apply content density mode to root view
       this.getView().addStyleClass(this.getOwnerComponent().getContentDensityClass())
-      this.setImageModel();
+      this.setImageModel()
     },
 
-    setImageModel: function(){
-      var images = {
-          logo: sap.ui.require.toUrl(
-            "odc/hackaton/besucherstrom-ui/images/rhs_logo_200_110.png"
-          )
-        };
+    setImageModel: function () {
+      const images = {
+        logo: sap.ui.require.toUrl(
+          'odc/hackaton/besucherstrom-ui/images/rhs_logo_200_110.png'
+        )
+      }
 
-        this.getOwnerComponent().getModel("img").setData(images);
+      this.getOwnerComponent().getModel('img').setData(images)
     }
   })
 })

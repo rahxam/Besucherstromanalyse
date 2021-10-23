@@ -4,10 +4,10 @@ module.exports = async function () {
   async function readEntrancesHistoryStatus (value) {
     value = value.map(x => {
       x.color = 'green'
-      if (x.value > 0.5) {
+      if (x.value > 0.8) {
         x.color = 'orange'
       }
-      if (x.value > 0.9) {
+      if (x.value > 1.1) {
         x.color = 'red'
       }
       return x
