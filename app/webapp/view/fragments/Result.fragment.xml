@@ -27,7 +27,7 @@
       </HBox>
       <HBox class="sapUiSmallMargin" justifyContent="SpaceBetween">
         <Text text="Voraussichtliche Auslastung:"/>
-          <micro:ColumnMicroChart size="M" class="sapUiSmallMargin">
+          <micro:ColumnMicroChart id="microChart" size="M" class="sapUiSmallMargin">
               <micro:columns>
                 <micro:ColumnMicroChartData	id="smartChart_0" value="" color="Neutral"/>
                 <micro:ColumnMicroChartData	id="smartChart_1" value="" color="Neutral"/>

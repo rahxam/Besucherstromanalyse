@@ -52,8 +52,8 @@ sap.ui.define(
             oTicketModel.loadData("/besucherstrom-ui/Tickets('" + code + "')", '', false)
             const data = oTicketModel.getData()
 
-            var tmpPerfectTime = new Date(data.perfectTime)
-            var day, month, year, hours, minutes
+            const tmpPerfectTime = new Date(data.perfectTime)
+            let day, month, year, hours, minutes
             day = tmpPerfectTime.getDate()
             if (day < 10) {
               day = '0' + day
@@ -73,7 +73,7 @@ sap.ui.define(
 
             data.perfectTime = day + '.' + month + '.' + tmpPerfectTime.getFullYear() + ' ' + hours + ':' + minutes
 
-            var eventDateTmp = new Date(data.eventDate)
+            const eventDateTmp = new Date(data.eventDate)
             day = eventDateTmp.getDate()
             if (day < 10) {
               day = '0' + day
@@ -98,10 +98,20 @@ sap.ui.define(
 
             const historyData = oHistoryModel.getData().value
             for (let i = 0; i < historyData.length; i++) {
-              let id = 'smartChart_' + i
-              var value = historyData[i].waitingPeople
+              const id = 'smartChart_' + i
+              const value = historyData[i].waitingPeople
               this.getView().byId(id).setValue(value)
             }
+            const startPrediction = historyData[0].date.slice(11,16);
+            const endPrediction = historyData[historyData.length-1].date.slice(11,16);
+            this.getView().byId("microChart").setLeftBottomLabel(new sap.suite.ui.microchart.ColumnMicroChartLabel({
+              label: startPrediction,
+              color: "white"
+            }))
+            this.getView().byId("microChart").setRightBottomLabel(new sap.suite.ui.microchart.ColumnMicroChartLabel({
+              label: endPrediction,
+              color: "white"
+            }))
 
             // oTicketModel.loadData("/besucherstrom-ui/EntrancesHistoryStatusß('" + code + "')", "" , false)
 
@@ -111,16 +121,12 @@ sap.ui.define(
             this.oView.byId('ticket-event').setText(data.eventName)
             this.oView.byId('ticket-perfecttime').setText(data.perfectTime)
 
-            
             this.oView.byId('scanFragment').setVisible(false)
             this.oView.byId('mapFragment').setVisible(true)
             this.oView.byId('fragmentResult').setVisible(true)
-            
+
             this.oView.byId('barcode-scan-url').setVisible(false)
             this.oView.byId('barcode-scan-barcode').setVisible(true)
-
-
-            
 
             $('#' + this.oView.byId('barcode-scan-barcode')).ready(() => {
               JsBarcode('#' + this.oView.byId('barcode-scan-barcode').sId, code, {
@@ -146,32 +152,28 @@ sap.ui.define(
               )
           }
         },
-        scanTicket: function() {
+        scanTicket: function () {
           this.oView
-          .byId('barcode-scan-url')
-          .setHref(
-            'http://zxing.appspot.com/scan?ret=' +
+            .byId('barcode-scan-url')
+            .setHref(
+              'http://zxing.appspot.com/scan?ret=' +
               encodeURIComponent(window.location.href + '?code={CODE}') +
               '&SCAN_FORMATS=CODE_128'
-          );
+            )
           this.oView
-          .byId('barcode-scan-url').press();
-          
+            .byId('barcode-scan-url').press()
         },
 
-        onAfterRendering: function (){
-          var oSvgGraphic = this.getView().byId("StadionMap");
-          //oSvgGraphic.addEventDelegate(this.setSvgData, this);
-          //oSvgGraphic.attachAfterRendering(this.setSvgData);
-          //debugger;
-          var that = this;
+        onAfterRendering: function () {
+          const oSvgGraphic = this.getView().byId('StadionMap')
+          // oSvgGraphic.addEventDelegate(this.setSvgData, this);
+          // oSvgGraphic.attachAfterRendering(this.setSvgData);
+          // debugger;
+          const that = this
 
-
-          setTimeout(function(){
-            that.setSvgData();
-          }, 2000);
-          
-
+          setTimeout(function () {
+            that.setSvgData()
+          }, 2000)
         },
         /* =========================================================== */
         /* event handlers                                              */
@@ -299,8 +301,6 @@ sap.ui.define(
           }
         },
 
-
-
         setSvgData: function(oEvent){
           //debugger;
           var that = this;
@@ -339,35 +339,33 @@ sap.ui.define(
           
         },
 
-        onClickDot: function(stest){
-          var that = this;
-          //var oButton = oEvent.getSource(),
-          var oView = this.getView();
-          var oSvgGraphic = this.getView().byId("StadionMap").getDomRef().contentDocument;
-          var oObjectCircle = oSvgGraphic.getElementById(stest);
-          
+        onClickDot: function (stest) {
+          const that = this
+          // var oButton = oEvent.getSource(),
+          const oView = this.getView()
+          const oSvgGraphic = this.getView().byId('StadionMap').getDomRef().contentDocument
+          const oObjectCircle = oSvgGraphic.getElementById(stest)
+
           // create popover
           if (!that._oDialog) {
             that._oDialog = Fragment.load({
               id: oView.getId(),
-              name: "odc.hackaton.besucherstrom-ui.view.fragments.Dialog",
+              name: 'odc.hackaton.besucherstrom-ui.view.fragments.Dialog',
               controller: that
-            }).then(function(oDialog) {
-              oView.addDependent(oDialog);
-              return oDialog;
-            });
+            }).then(function (oDialog) {
+              oView.addDependent(oDialog)
+              return oDialog
+            })
           }
-          that._oDialog.then(function(oDialog) {
-            oDialog.open();
-          });
-
+          that._oDialog.then(function (oDialog) {
+            oDialog.open()
+          })
         },
 
         onCloseDialog: function () {
-          this.byId("myDialog").close();
-          //this.byId("employeeDialog").destroy();
+          this.byId('myDialog').close()
+          // this.byId("employeeDialog").destroy();
         }
-
 
       }
     )

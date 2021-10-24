@@ -81,25 +81,18 @@ module.exports = class {
     this.data.EntrancesHistoryStatus = []
 
     const data = JSON.parse(fs.readFileSync(path.resolve(path.resolve(__dirname, 'import'), 'example_plot_data.json'), 'utf-8')).CountOfPersons
-    let x = 0
     for (const [key, value] of Object.entries(data)) {
-      x++
-      if(x === 8) {
-        ['AE', 'FK', 'ST', 'LR'].forEach(entry => {
-        
-          this.data.EntrancesHistoryStatus.push({
-            entrance_ID: entry,
-            event_ID: '3',
-            date: key.replace(' ', 'T') + '.000Z',
-            percentage: value > 0 ? value / 500 : 0,
-            waitingPeople: value,
-            waitingTime: Math.round(value > 100 ? (value > 500 ? value / 40 : value / 100) : 0)
-          })
+      ['AE', 'FK', 'ST', 'LR'].forEach(entry => {
+        const newValue = Math.floor(value * (Math.random() * (1.1 - 0.9) + 0.9))
+        this.data.EntrancesHistoryStatus.push({
+          entrance_ID: entry,
+          event_ID: '3',
+          date: key.replace(' ', 'T') + '.000Z',
+          percentage: newValue > 0 ? newValue / 500 : 0,
+          waitingPeople: newValue,
+          waitingTime: Math.round(newValue > 100 ? (newValue > 400 ? newValue / 40 : newValue / 80) : 0)
         })
-
-        x=0
-      }
-      
+      })
     }
   }
 

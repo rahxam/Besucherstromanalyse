@@ -21,6 +21,5 @@ sap.ui.define([
       this.getOwnerComponent().getModel('img').setData(images)
     }
 
-    
   })
 })

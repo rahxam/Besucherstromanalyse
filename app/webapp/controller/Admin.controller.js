@@ -58,19 +58,16 @@ sap.ui.define(
 
         },
 
-        onAfterRendering: function (){
-          var oSvgGraphic = this.getView().byId("StadionMap");
-          //oSvgGraphic.addEventDelegate(this.setSvgData, this);
-          //oSvgGraphic.attachAfterRendering(this.setSvgData);
-          //debugger;
-          var that = this;
+        onAfterRendering: function () {
+          const oSvgGraphic = this.getView().byId('StadionMap')
+          // oSvgGraphic.addEventDelegate(this.setSvgData, this);
+          // oSvgGraphic.attachAfterRendering(this.setSvgData);
+          // debugger;
+          const that = this
 
-
-          setTimeout(function(){
-            that.setSvgData();
-          }, 2000);
-          
-
+          setTimeout(function () {
+            that.setSvgData()
+          }, 2000)
         },
 
         /* =========================================================== */
@@ -199,8 +196,6 @@ sap.ui.define(
           }
         },
 
-
-
         setSvgData: function(oEvent){
           //debugger;
           var that = this;
@@ -248,12 +243,12 @@ sap.ui.define(
           if (!that._oDialog) {
             that._oDialog = Fragment.load({
               id: oView.getId(),
-              name: "odc.hackaton.besucherstrom-ui.view.fragments.Dialog",
+              name: 'odc.hackaton.besucherstrom-ui.view.fragments.Dialog',
               controller: that
-            }).then(function(oDialog) {
-              oView.addDependent(oDialog);
-              return oDialog;
-            });
+            }).then(function (oDialog) {
+              oView.addDependent(oDialog)
+              return oDialog
+            })
           }
           that._oDialog.then(function(oDialog) {
             var oChart = oDialog.getContent()[0].getItems()[0];
@@ -263,10 +258,9 @@ sap.ui.define(
         },
 
         onCloseDialog: function () {
-          this.byId("myDialog").close();
-          //this.byId("employeeDialog").destroy();
+          this.byId('myDialog').close()
+          // this.byId("employeeDialog").destroy();
         }
-
 
       }
     )
