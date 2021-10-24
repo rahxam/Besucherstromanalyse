@@ -141,5 +141,9 @@ border: none;
 }
 
 .sapMPanelHdr {
-  color: #fff;
+  color: #fff !important;
+}
+
+.sapMPanelWrappingDiv .sapUiIcon {
+    color: #fdc300;
 }
