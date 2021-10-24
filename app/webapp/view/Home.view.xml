@@ -15,7 +15,7 @@
                     <Button text="KONTAKT" class="headerButton sapUiVisibleOnlyOnDesktop" type="Transparent"/>
                   </HBox>
                   <!--Smartphone NavBar-->
-                  <HBox justifyContent="SpaceBetween sapUiHideOnDesktop" alignItems="Center" class="sapUiSmallMargin">
+                  <HBox justifyContent="SpaceBetween" alignItems="Center" class="sapUiSmallMargin sapUiHideOnDesktop">
                     <Image src="{img>/logo}" height="5em"/>
                     <Button text="FANFLOW AI" class="sapUiSmallMarginBegin headerButtonMobile " type="Transparent"/>
                   </HBox>
