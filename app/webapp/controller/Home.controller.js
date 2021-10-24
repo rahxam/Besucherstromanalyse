@@ -102,6 +102,16 @@ sap.ui.define(
               var value = historyData[i].waitingPeople
               this.getView().byId(id).setValue(value)
             }
+            const startPrediction = historyData[0].date.slice(11,16);
+            const endPrediction = historyData[historyData.length-1].date.slice(11,16);
+            this.getView().byId("microChart").setLeftBottomLabel(new sap.suite.ui.microchart.ColumnMicroChartLabel({
+              label: startPrediction,
+              color: "white"
+            }))
+            this.getView().byId("microChart").setRightBottomLabel(new sap.suite.ui.microchart.ColumnMicroChartLabel({
+              label: endPrediction,
+              color: "white"
+            }))
 
             // oTicketModel.loadData("/besucherstrom-ui/EntrancesHistoryStatusß('" + code + "')", "" , false)
 
