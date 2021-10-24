@@ -450,6 +450,7 @@
   <path
      style="opacity:1;fill:#ffb955;fill-opacity:1;stroke:#ffb955;stroke-width:0.96;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      id="dot_untenlinks"
+     visibility="hidden"
      sodipodi:type="arc"
      sodipodi:cx="189.00418"
      sodipodi:cy="754.24512"
@@ -469,8 +470,8 @@
       id="text4414"><tspan
       sodipodi:role="line"
       id="tspan4412"
-      x="28.178236"
-      y="820.03937">Lennéplatz</tspan></text>
+      x="18.07"
+      y="870.56">Lennéplatz</tspan></text>
       <text
       xml:space="preserve"
       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:1.25;font-family:Bahnschrift;-inkscape-font-specification:Bahnschrift;fill:#e0e0e0;fill-opacity:1;stroke:none"
@@ -503,16 +504,91 @@
       y="36.634071">Gast</tspan></text>
 
       <path
-      style="fill:#E0E0E0;stroke-width:1.11453"
-      d="m 399.55959,616.336 v -16.71798 h 26.1915 26.19149 v 16.71798 16.71797 h -26.19149 -26.1915 z"
-      id="path1914"
-      transform="translate(-0.00180408)">
-      <animate
-      attributeType="XML"
-      attributeName="fill"
-      values="#fcd300;#FDCB4C;#FAE7A4;#E0E0E0;#FAE7A4;#fcd300"
-      dur="1.5s"
-      repeatCount="indefinite"/>
+         style="fill:#E0E0E0;stroke-width:1.11453"
+         d="m 399.55959,616.336 v -16.71798 h 26.1915 26.19149 v 16.71798 16.71797 h -26.19149 -26.1915 z"
+         id="path1914"
+         transform="translate(-0.00180408)">
+         <animate
+         attributeType="XML"
+         attributeName="fill"
+         values="#fcd300;#FDCB4C;#FAE7A4;#E0E0E0;#FAE7A4;#fcd300"
+         dur="1.5s"
+         repeatCount="indefinite"/>
       </path>
+
+      <path
+         sodipodi:type="star"
+         style="fill:#ffa400;fill-opacity:1"
+         id="path8035"
+         inkscape:flatsided="false"
+         sodipodi:sides="3"
+         sodipodi:cx="57.415096"
+         sodipodi:cy="651.01312"
+         sodipodi:r1="54.793682"
+         sodipodi:r2="27.396841"
+         sodipodi:arg1="0.53172407"
+         sodipodi:arg2="1.5789216"
+         inkscape:rounded="0"
+         inkscape:randomized="0"
+         d="M 104.64365,678.79462 57.192492,678.40906 9.7413371,678.0235 33.800821,637.12237 l 24.059485,-40.90112 23.39167,41.28669 z"
+         transform="matrix(0.65691434,0.75441982,-0.3157793,0.2749662,377.81751,506.1424)"
+         inkscape:transform-center-x="8.7972415"
+         inkscape:transform-center-y="7.3649417" >
+         <animate
+         attributeType="XML"
+         attributeName="fill"
+         values="#fcd300;#FDCB4C;#FAE7A4;#E0E0E0;#FAE7A4;#fcd300"
+         dur="1.5s"
+         repeatCount="indefinite"/></path>
+         <path
+         sodipodi:type="star"
+         style="fill:#ffa400;fill-opacity:1"
+         id="path8035-2"
+         inkscape:flatsided="false"
+         sodipodi:sides="3"
+         sodipodi:cx="57.415096"
+         sodipodi:cy="651.01312"
+         sodipodi:r1="54.793682"
+         sodipodi:r2="27.396841"
+         sodipodi:arg1="0.53172407"
+         sodipodi:arg2="1.5789216"
+         inkscape:rounded="0"
+         inkscape:randomized="0"
+         transform="matrix(0.65691434,0.75441982,-0.3157793,0.2749662,343.14271,528.14189)"
+         inkscape:transform-center-x="8.7972415"
+         inkscape:transform-center-y="7.3649417"
+         d="M 104.64365,678.79462 57.192492,678.40906 9.7413371,678.0235 33.800821,637.12237 l 24.059485,-40.90112 23.39167,41.28669 z">
+         <animate
+         attributeType="XML"
+         attributeName="fill"
+         values="#fcd300;#FDCB4C;#FAE7A4;#E0E0E0;#FAE7A4;#fcd300"
+         dur="1.5s"
+         repeatCount="indefinite"/>
+         </path>
+         <path
+         sodipodi:type="star"
+         style="fill:#ffa400;fill-opacity:1"
+         id="path8035-2-9"
+         inkscape:flatsided="false"
+         sodipodi:sides="3"
+         sodipodi:cx="57.415096"
+         sodipodi:cy="651.01312"
+         sodipodi:r1="54.793682"
+         sodipodi:r2="27.396841"
+         sodipodi:arg1="0.53172407"
+         sodipodi:arg2="1.5789216"
+         inkscape:rounded="0"
+         inkscape:randomized="0"
+         transform="matrix(0.65691434,0.75441982,-0.3157793,0.2749662,315.36119,555.92341)"
+         inkscape:transform-center-x="8.7972415"
+         inkscape:transform-center-y="7.3649417"
+         d="M 104.64365,678.79462 57.192492,678.40906 9.7413371,678.0235 33.800821,637.12237 l 24.059485,-40.90112 23.39167,41.28669 z">
+         <animate
+         attributeType="XML"
+         attributeName="fill"
+         values="#fcd300;#FDCB4C;#FAE7A4;#E0E0E0;#FAE7A4;#fcd300"
+         dur="1.5s"
+         repeatCount="indefinite"/>
+         </path>
 
 </svg>
