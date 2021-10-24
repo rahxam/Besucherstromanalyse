@@ -139,7 +139,7 @@ sap.ui.define(
             })
           } else {
             this.oView.byId('scanFragment').setVisible(true)
-            this.oView.byId('mapFragment').setVisible(true)
+            this.oView.byId('mapFragment').setVisible(false)
             this.oView.byId('fragmentResult').setVisible(false)
             this.oView.byId('barcode-scan-url').setVisible(true)
             this.oView.byId('barcode-scan-barcode').setVisible(false)
