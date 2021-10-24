@@ -1,0 +1,27 @@
+<mvc:View controllerName="odc.hackaton.besucherstrom-ui.controller.Admin" xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true" xmlns="sap.m" xmlns:f="sap.f" xmlns:core="sap.ui.core" xmlns:grid="sap.ui.layout.cssgrid"
+    xmlns:form="sap.ui.layout.form" xmlns:l="sap.ui.layout" >
+    <NavContainer id="wizardNavContainer">
+        <pages>
+            <Page id="mainPage" class="homePage" showHeader="false" showFooter="false">
+                <content>        
+                <!--Desktop NavBar-->
+                  <HBox justifyContent="SpaceBetween" alignItems="Center" class="sapUiSmallMargin sapUiVisibleOnlyOnDesktop">
+                    <Image src="{img>/logo}"/>
+                    <Button text="TICKETS &amp; TERMINE" class="headerButton " type="Transparent"/>
+                    <Button text="STADIONTOUR" class="headerButton sapUiVisibleOnlyOnDesktop" type="Transparent"/>
+                    <Button text="SPORT &amp; EVENT" class="headerButton sapUiVisibleOnlyOnDesktop" type="Transparent"/>
+                    <Button text="R.-H.-STADION" class="headerButton sapUiVisibleOnlyOnDesktop" type="Transparent"/>
+                    <Button text="KONTAKT" class="headerButton sapUiVisibleOnlyOnDesktop" type="Transparent"/>
+                  </HBox>
+                  <VBox alignItems="Center">
+                  <!-- <core:Fragment fragmentName="odc.hackaton.besucherstrom-ui.view.fragments.Result" type="XML"/> -->
+                    <core:Fragment fragmentName="odc.hackaton.besucherstrom-ui.view.fragments.MapAdmin" type="XML"/>
+                  </VBox>
+                </content>
+            
+            </Page>
+   
+        </pages>
+    </NavContainer>
+</mvc:View>

@@ -85,7 +85,7 @@
 					"groupId": "$auto",
 					"synchronizationMode": "None",
 					"autoExpandSelect":true
-				}
+			}
       },
       "img": {
         "type": "sap.ui.model.json.JSONModel"
@@ -119,6 +119,11 @@
 					"target": ["home"]
 				},
 				{
+					"pattern": "Admin",
+					"name": "admin",
+					"target": ["admin"]
+				},
+				{
 					"pattern": "Tickets{objectId}",
 					"name": "object",
 					"target": ["object"]
@@ -149,6 +154,10 @@
 				"home": {
 					"viewName": "Home",
 					"viewId": "home"
+				},
+				"admin": {
+					"viewName": "Admin",
+					"viewId": "admin"
 				}
 			}
 		}

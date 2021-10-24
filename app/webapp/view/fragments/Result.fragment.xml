@@ -1,31 +1,48 @@
 <core:FragmentDefinition  xmlns="sap.m" xmlns:f="sap.f" xmlns:core="sap.ui.core"
   xmlns:l="sap.ui.layout" xmlns:micro="sap.suite.ui.microchart">
    
-    <VBox class="transparentResult">
+    <VBox class="transparentResult" id="fragmentResult">
       <HBox class="sapUiSmallMargin" justifyContent="SpaceBetween">
+        <Title id="ticket-event" text=""/>
+      </HBox>
+      <HBox class="sapUiSmallMargin" justifyContent="SpaceBetween">
+        <Text id="ticket-date" text=""/>
+      </HBox>
+      <HBox class="sapUiSmallMargin" justifyContent="SpaceBetween">
+        <Text text="Dein Ticket:"/>
+        <Image class="barcode-scan-barcode" id="barcode-scan-barcode" />
+      </HBox>
+      <HBox class="sapUiSmallMargin" justifyContent="SpaceBetween">
+      
         <Text text="Dein Block:"/>
-<Text text="K4"/>
+        <Text id="ticket-block" text=""/>
       </HBox>
       <HBox class="sapUiSmallMargin" justifyContent="SpaceBetween">
         <Text text="Dein Eingang:"/>
-<Text text="Lenéstraße, Eingang K,L,M"/>
+        <Text id="ticket-entrance" text=""/>
+      </HBox>
+      <HBox class="sapUiSmallMargin" justifyContent="SpaceBetween">
+        <Text text="Aktuelle Wartezeit:"/>
+        <Text id="ticket-waitingTime" text="12 Minuten"/>
       </HBox>
       <HBox class="sapUiSmallMargin" justifyContent="SpaceBetween">
         <Text text="Voraussichtliche Auslastung:"/>
-<micro:ColumnMicroChart size="M" class="sapUiSmallMargin">
-		<micro:columns>
-			<micro:ColumnMicroChartData	value="60" color="Neutral"/>
-			<micro:ColumnMicroChartData	value="80" color="Neutral"/>
-			<micro:ColumnMicroChartData	value="100" color="Neutral"/>
-			<micro:ColumnMicroChartData	value="60" color="Neutral"/>
-			<micro:ColumnMicroChartData	value="55" color="Neutral"/>
-			<micro:ColumnMicroChartData	value="15" color="Neutral"/>
-		</micro:columns>
-	</micro:ColumnMicroChart>
+          <micro:ColumnMicroChart size="M" class="sapUiSmallMargin">
+              <micro:columns>
+                <micro:ColumnMicroChartData	id="smartChart_0" value="" color="Neutral"/>
+                <micro:ColumnMicroChartData	id="smartChart_1" value="" color="Neutral"/>
+                <micro:ColumnMicroChartData	id="smartChart_2" value="" color="Neutral"/>
+                <micro:ColumnMicroChartData	id="smartChart_3" value="" color="Neutral"/>
+                <micro:ColumnMicroChartData	id="smartChart_4" value="" color="Neutral"/>
+                <micro:ColumnMicroChartData	id="smartChart_5" value="" color="Neutral"/>
+                <micro:ColumnMicroChartData	id="smartChart_6" value="" color="Neutral"/>
+                <micro:ColumnMicroChartData	id="smartChart_7" value="" color="Neutral"/>
+              </micro:columns>
+            </micro:ColumnMicroChart>
       </HBox>
       <HBox class="sapUiSmallMargin" justifyContent="SpaceBetween">
         <Text text="Perfekte Ankunftszeit:"/>
-<Text text="12:45 Uhr"/>
+        <Text id="ticket-perfecttime" text=""/>
       </HBox>
     </VBox>
 

@@ -5,6 +5,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Best Practices App</title>
 
+    <style>
+        /* In order to place the tracking correctly */
+        canvas.drawing, canvas.drawingBuffer {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+	<script src="https://unpkg.com/jsbarcode@latest/dist/JsBarcode.all.min.js"></script>
 	<script id="sap-ui-bootstrap"
 			src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
 			data-sap-ui-theme="sap_fiori_3"
@@ -23,4 +32,8 @@
 <body class="sapUiBody">
 	<div data-sap-ui-component data-name="odc.hackaton.besucherstrom-ui" data-id="container" data-settings='{"id" : "besucherstrom-ui"}'></div>
 </body>
+
+
+
+
 </html>

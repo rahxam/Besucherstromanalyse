@@ -1,0 +1,28 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:micro="sap.suite.ui.microchart"
+	xmlns:core="sap.ui.core">
+	<Dialog
+		id="myDialog"
+		title="Testtitel">
+		<content>
+			<micro:ColumnMicroChart size="M" class="sapUiSmallMargin">
+            	<micro:columns>
+					<micro:ColumnMicroChartData id="smartChart_0" value="10" color="Neutral"/>
+					<micro:ColumnMicroChartData id="smartChart_1" value="12" color="Neutral"/>
+					<micro:ColumnMicroChartData id="smartChart_2" value="23" color="Neutral"/>
+					<micro:ColumnMicroChartData id="smartChart_3" value="33" color="Neutral"/>
+					<micro:ColumnMicroChartData id="smartChart_4" value="34" color="Neutral"/>
+					<micro:ColumnMicroChartData id="smartChart_5" value="22" color="Neutral"/>
+					<micro:ColumnMicroChartData id="smartChart_6" value="12" color="Neutral"/>
+					<micro:ColumnMicroChartData id="smartChart_7" value="10" color="Neutral"/>
+            	</micro:columns>
+            </micro:ColumnMicroChart>
+			
+		</content>
+		<endButton>
+			<Button text="Close" press="onCloseDialog"/>
+		</endButton>
+		
+	</Dialog>
+</core:FragmentDefinition>
