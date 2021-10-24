@@ -133,7 +133,7 @@ sap.ui.define(
             })
           } else {
             this.oView.byId('scanFragment').setVisible(true)
-            this.oView.byId('mapFragment').setVisible(true)
+            this.oView.byId('mapFragment').setVisible(false)
             this.oView.byId('fragmentResult').setVisible(false)
             this.oView.byId('barcode-scan-url').setVisible(true)
             this.oView.byId('barcode-scan-barcode').setVisible(false)
@@ -334,8 +334,8 @@ sap.ui.define(
             that.onClickDot("dot_untenrechts");
           });
 
-          var oE1 = oSvgGraphic.getElementById("path1914");
-          oE1.style.fill = "#fdc300";
+          // var oE1 = oSvgGraphic.getElementById("path1914");
+          // oE1.style.fill = "#fdc300";
           
         },
 

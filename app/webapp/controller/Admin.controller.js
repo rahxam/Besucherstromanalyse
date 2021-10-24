@@ -26,7 +26,8 @@ sap.ui.define(
          */
         onInit: function () {
           // keeps the search state
-          this._aTableSearchState = []
+          this._aTableSearchState = [];
+          var that = this;
 
           // Model used to manipulate control states
           const oViewModel = new JSONModel({
@@ -43,6 +44,17 @@ sap.ui.define(
             tableNoDataText: this.getResourceBundle().getText('tableNoDataText')
           })
           this.setModel(oViewModel, 'worklistView');
+          
+          const oPlotModel = new JSONModel();
+
+          oPlotModel.loadData('./model/EntrancesHistoryStatus.json');
+          oPlotModel.attachRequestCompleted(function(oEventModel){
+              console.log(that.getModel('plotModel'));
+              //This is called after data is loading
+          });
+
+          this.setModel(oPlotModel, 'plotModel');
+
 
         },
 
@@ -195,29 +207,29 @@ sap.ui.define(
           var oSvgGraphic = this.getView().byId("StadionMapAdmin").getDomRef().contentDocument;
           //oSvgGraphic.getElementById("svg161");
           var oObenLinks = oSvgGraphic.getElementById("dot_obenlinks");
-          oObenLinks.style.fill = "red";
-          oObenLinks.style.stroke = "red";
+          oObenLinks.style.fill = "green";
+          oObenLinks.style.stroke = "green";
           oObenLinks.addEventListener("mousedown", function(){
             that.onClickDot("dot_obenlinks");
           });
 
           var oObenRechts = oSvgGraphic.getElementById("dot_obenrechts");
-          oObenRechts.style.fill = "yellow";
-          oObenRechts.style.stroke = "yellow";
+          oObenRechts.style.fill = "red";
+          oObenRechts.style.stroke = "red";
           oObenRechts.addEventListener("mousedown", function(){
             that.onClickDot("dot_obenrechts");
           });
 
           var oUntenLinks = oSvgGraphic.getElementById("dot_untenlinks");
-          oUntenLinks.style.fill = "green";
-          oUntenLinks.style.stroke = "green";
+          oUntenLinks.style.fill = "yellow";
+          oUntenLinks.style.stroke = "yellow";
           oUntenLinks.addEventListener("mousedown", function(){
             that.onClickDot("dot_untenlinks");
           });
 
           var oUntenRechts = oSvgGraphic.getElementById("dot_untenrechts");
-          oUntenRechts.style.fill = "green";
-          oUntenRechts.style.stroke = "green";
+          oUntenRechts.style.fill = "yellow";
+          oUntenRechts.style.stroke = "yellow";
           oUntenRechts.addEventListener("mousedown", function(){
             that.onClickDot("dot_untenrechts");
           });
@@ -230,6 +242,7 @@ sap.ui.define(
           var oView = this.getView();
           var oSvgGraphic = this.getView().byId("StadionMapAdmin").getDomRef().contentDocument;
           var oObjectCircle = oSvgGraphic.getElementById(stest);
+          var oFilter1 = new sap.ui.model.Filter("entrance_ID", sap.ui.model.FilterOperator.StartsWith, "AE");
           
           // create popover
           if (!that._oDialog) {
@@ -243,6 +256,7 @@ sap.ui.define(
             });
           }
           that._oDialog.then(function(oDialog) {
+            var oChart = oDialog.getContent()[0].getItems()[0];
             oDialog.open();
           });
 
