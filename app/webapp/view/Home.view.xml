@@ -17,7 +17,7 @@
                   <!--Smartphone NavBar-->
                   <HBox justifyContent="SpaceBetween sapUiHideOnDesktop" alignItems="Center" class="sapUiSmallMargin">
                     <Image src="{img>/logo}" height="5em"/>
-                    <Button text="FANFLOW" class="sapUiSmallMarginBegin headerButtonMobile " type="Transparent"/>
+                    <Button text="FANFLOW AI" class="sapUiSmallMarginBegin headerButtonMobile " type="Transparent"/>
                   </HBox>
                   <VBox alignItems="Center">
                     <core:Fragment fragmentName="odc.hackaton.besucherstrom-ui.view.fragments.Scan" type="XML"/>
