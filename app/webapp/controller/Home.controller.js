@@ -102,15 +102,15 @@ sap.ui.define(
               const value = historyData[i].waitingPeople
               this.getView().byId(id).setValue(value)
             }
-            const startPrediction = historyData[0].date.slice(11,16);
-            const endPrediction = historyData[historyData.length-1].date.slice(11,16);
-            this.getView().byId("microChart").setLeftBottomLabel(new sap.suite.ui.microchart.ColumnMicroChartLabel({
+            const startPrediction = historyData[0].date.slice(11, 16)
+            const endPrediction = historyData[historyData.length - 1].date.slice(11, 16)
+            this.getView().byId('microChart').setLeftBottomLabel(new sap.suite.ui.microchart.ColumnMicroChartLabel({
               label: startPrediction,
-              color: "white"
+              color: 'white'
             }))
-            this.getView().byId("microChart").setRightBottomLabel(new sap.suite.ui.microchart.ColumnMicroChartLabel({
+            this.getView().byId('microChart').setRightBottomLabel(new sap.suite.ui.microchart.ColumnMicroChartLabel({
               label: endPrediction,
-              color: "white"
+              color: 'white'
             }))
 
             // oTicketModel.loadData("/besucherstrom-ui/EntrancesHistoryStatusß('" + code + "')", "" , false)
@@ -301,42 +301,41 @@ sap.ui.define(
           }
         },
 
-        setSvgData: function(oEvent){
-          //debugger;
-          var that = this;
-          var oSvgGraphic = this.getView().byId("StadionMap").getDomRef().contentDocument;
-          //oSvgGraphic.getElementById("svg161");
-          var oObenLinks = oSvgGraphic.getElementById("dot_obenlinks");
-          oObenLinks.style.fill = "red";
-          oObenLinks.style.stroke = "red";
-          oObenLinks.addEventListener("mousedown", function(){
-            that.onClickDot("dot_obenlinks");
-          });
+        setSvgData: function (oEvent) {
+          // debugger;
+          const that = this
+          const oSvgGraphic = this.getView().byId('StadionMap').getDomRef().contentDocument
+          // oSvgGraphic.getElementById("svg161");
+          const oObenLinks = oSvgGraphic.getElementById('dot_obenlinks')
+          oObenLinks.style.fill = 'red'
+          oObenLinks.style.stroke = 'red'
+          oObenLinks.addEventListener('mousedown', function () {
+            that.onClickDot('dot_obenlinks')
+          })
 
-          var oObenRechts = oSvgGraphic.getElementById("dot_obenrechts");
-          oObenRechts.style.fill = "yellow";
-          oObenRechts.style.stroke = "yellow";
-          oObenRechts.addEventListener("mousedown", function(){
-            that.onClickDot("dot_obenrechts");
-          });
+          const oObenRechts = oSvgGraphic.getElementById('dot_obenrechts')
+          oObenRechts.style.fill = 'yellow'
+          oObenRechts.style.stroke = 'yellow'
+          oObenRechts.addEventListener('mousedown', function () {
+            that.onClickDot('dot_obenrechts')
+          })
 
-          var oUntenLinks = oSvgGraphic.getElementById("dot_untenlinks");
-          oUntenLinks.style.fill = "green";
-          oUntenLinks.style.stroke = "green";
-          oUntenLinks.addEventListener("mousedown", function(){
-            that.onClickDot("dot_untenlinks");
-          });
+          const oUntenLinks = oSvgGraphic.getElementById('dot_untenlinks')
+          oUntenLinks.style.fill = 'green'
+          oUntenLinks.style.stroke = 'green'
+          oUntenLinks.addEventListener('mousedown', function () {
+            that.onClickDot('dot_untenlinks')
+          })
 
-          var oUntenRechts = oSvgGraphic.getElementById("dot_untenrechts");
-          oUntenRechts.style.fill = "green";
-          oUntenRechts.style.stroke = "green";
-          oUntenRechts.addEventListener("mousedown", function(){
-            that.onClickDot("dot_untenrechts");
-          });
+          const oUntenRechts = oSvgGraphic.getElementById('dot_untenrechts')
+          oUntenRechts.style.fill = 'green'
+          oUntenRechts.style.stroke = 'green'
+          oUntenRechts.addEventListener('mousedown', function () {
+            that.onClickDot('dot_untenrechts')
+          })
 
           // var oE1 = oSvgGraphic.getElementById("path1914");
           // oE1.style.fill = "#fdc300";
-          
         },
 
         onClickDot: function (stest) {

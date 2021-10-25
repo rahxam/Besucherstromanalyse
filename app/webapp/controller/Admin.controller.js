@@ -26,8 +26,8 @@ sap.ui.define(
          */
         onInit: function () {
           // keeps the search state
-          this._aTableSearchState = [];
-          var that = this;
+          this._aTableSearchState = []
+          const that = this
 
           // Model used to manipulate control states
           const oViewModel = new JSONModel({
@@ -43,19 +43,17 @@ sap.ui.define(
             ),
             tableNoDataText: this.getResourceBundle().getText('tableNoDataText')
           })
-          this.setModel(oViewModel, 'worklistView');
-          
-          const oPlotModel = new JSONModel();
+          this.setModel(oViewModel, 'worklistView')
 
-          oPlotModel.loadData('./model/EntrancesHistoryStatus.json');
-          oPlotModel.attachRequestCompleted(function(oEventModel){
-              console.log(that.getModel('plotModel'));
-              //This is called after data is loading
-          });
+          const oPlotModel = new JSONModel()
 
-          this.setModel(oPlotModel, 'plotModel');
+          oPlotModel.loadData('./model/EntrancesHistoryStatus.json')
+          oPlotModel.attachRequestCompleted(function (oEventModel) {
+            console.log(that.getModel('plotModel'))
+            // This is called after data is loading
+          })
 
-
+          this.setModel(oPlotModel, 'plotModel')
         },
 
         onAfterRendering: function () {
@@ -196,49 +194,48 @@ sap.ui.define(
           }
         },
 
-        setSvgData: function(oEvent){
-          //debugger;
-          var that = this;
-          var oSvgGraphic = this.getView().byId("StadionMapAdmin").getDomRef().contentDocument;
-          //oSvgGraphic.getElementById("svg161");
-          var oObenLinks = oSvgGraphic.getElementById("dot_obenlinks");
-          oObenLinks.style.fill = "green";
-          oObenLinks.style.stroke = "green";
-          oObenLinks.addEventListener("mousedown", function(){
-            that.onClickDot("dot_obenlinks");
-          });
+        setSvgData: function (oEvent) {
+          // debugger;
+          const that = this
+          const oSvgGraphic = this.getView().byId('StadionMapAdmin').getDomRef().contentDocument
+          // oSvgGraphic.getElementById("svg161");
+          const oObenLinks = oSvgGraphic.getElementById('dot_obenlinks')
+          oObenLinks.style.fill = 'green'
+          oObenLinks.style.stroke = 'green'
+          oObenLinks.addEventListener('mousedown', function () {
+            that.onClickDot('dot_obenlinks')
+          })
 
-          var oObenRechts = oSvgGraphic.getElementById("dot_obenrechts");
-          oObenRechts.style.fill = "red";
-          oObenRechts.style.stroke = "red";
-          oObenRechts.addEventListener("mousedown", function(){
-            that.onClickDot("dot_obenrechts");
-          });
+          const oObenRechts = oSvgGraphic.getElementById('dot_obenrechts')
+          oObenRechts.style.fill = 'red'
+          oObenRechts.style.stroke = 'red'
+          oObenRechts.addEventListener('mousedown', function () {
+            that.onClickDot('dot_obenrechts')
+          })
 
-          var oUntenLinks = oSvgGraphic.getElementById("dot_untenlinks");
-          oUntenLinks.style.fill = "yellow";
-          oUntenLinks.style.stroke = "yellow";
-          oUntenLinks.addEventListener("mousedown", function(){
-            that.onClickDot("dot_untenlinks");
-          });
+          const oUntenLinks = oSvgGraphic.getElementById('dot_untenlinks')
+          oUntenLinks.style.fill = 'yellow'
+          oUntenLinks.style.stroke = 'yellow'
+          oUntenLinks.addEventListener('mousedown', function () {
+            that.onClickDot('dot_untenlinks')
+          })
 
-          var oUntenRechts = oSvgGraphic.getElementById("dot_untenrechts");
-          oUntenRechts.style.fill = "yellow";
-          oUntenRechts.style.stroke = "yellow";
-          oUntenRechts.addEventListener("mousedown", function(){
-            that.onClickDot("dot_untenrechts");
-          });
-          
+          const oUntenRechts = oSvgGraphic.getElementById('dot_untenrechts')
+          oUntenRechts.style.fill = 'yellow'
+          oUntenRechts.style.stroke = 'yellow'
+          oUntenRechts.addEventListener('mousedown', function () {
+            that.onClickDot('dot_untenrechts')
+          })
         },
 
-        onClickDot: function(stest){
-          var that = this;
-          //var oButton = oEvent.getSource(),
-          var oView = this.getView();
-          var oSvgGraphic = this.getView().byId("StadionMapAdmin").getDomRef().contentDocument;
-          var oObjectCircle = oSvgGraphic.getElementById(stest);
-          var oFilter1 = new sap.ui.model.Filter("entrance_ID", sap.ui.model.FilterOperator.StartsWith, "AE");
-          
+        onClickDot: function (stest) {
+          const that = this
+          // var oButton = oEvent.getSource(),
+          const oView = this.getView()
+          const oSvgGraphic = this.getView().byId('StadionMapAdmin').getDomRef().contentDocument
+          const oObjectCircle = oSvgGraphic.getElementById(stest)
+          const oFilter1 = new sap.ui.model.Filter('entrance_ID', sap.ui.model.FilterOperator.StartsWith, 'AE')
+
           // create popover
           if (!that._oDialog) {
             that._oDialog = Fragment.load({
@@ -250,11 +247,10 @@ sap.ui.define(
               return oDialog
             })
           }
-          that._oDialog.then(function(oDialog) {
-            var oChart = oDialog.getContent()[0].getItems()[0];
-            oDialog.open();
-          });
-
+          that._oDialog.then(function (oDialog) {
+            const oChart = oDialog.getContent()[0].getItems()[0]
+            oDialog.open()
+          })
         },
 
         onCloseDialog: function () {

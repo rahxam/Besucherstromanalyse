@@ -19,6 +19,7 @@ modules:
       routes:
         - route: ${default-uri}
         - route: ${MTA_ENV}.${default-domain}
+        - route: besucherstrom.${default-domain}
     build-parameters:
       supported-platforms:
         - CF

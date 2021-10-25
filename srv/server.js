@@ -98,7 +98,7 @@ cds.on('bootstrap', async (app) => {
   app.get('/notify', (req, res) => {
     const payload = JSON.stringify({
       title: 'Ohne Wartezeit ins Stadion!',
-      body: 'Sei 17:14 Uhr am Eingang Leneplatz'
+      body: 'Sei 17:00 Uhr am Eingang Lennéplatz'
     })
 
     subscriptions.forEach((subscription) => {

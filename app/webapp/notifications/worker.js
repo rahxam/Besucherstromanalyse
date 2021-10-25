@@ -6,6 +6,6 @@ self.addEventListener('push', ev => {
   console.log('Got push', data)
   self.registration.showNotification(data.title, {
     body: data.body,
-    icon: 'https://besucherstrom.cfapps.eu10.hana.ondemand.com/webapp/notifications/dynamo.png'
+    icon: 'https://fanflow.cfapps.eu10.hana.ondemand.com/webapp/notifications/dynamo.png'
   })
 })
